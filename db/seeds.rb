@@ -38,7 +38,20 @@ end
 
 # create UserTest
 User.all.each do |user|
+  current_user = user 
   Test.all.each do |test|
-    UserTest.find_or_create_by(user_id: user.id, test_id: test.id)
+    UserTest.find_or_create_by(user_id: current_user.id, test_id: test.id)
   end
 end
+# user1 = User.all.find_by(id: 1)
+# user2 = User.all.find_by(id: 2)
+# user3 = User.all.find_by(id: 3)
+# test1 = Test.all.find_by(id: 1)
+# test2 = Test.all.find_by(id: 2)
+# test3 = Test.all.find_by(id: 3)
+
+# UserTest.create(
+#                 [{ user_id: user1.id, test_id: test1.id },
+#                  { user_id: user2.id, test_id: test2.id },
+#                  { user_id: user3.id, test_id: test3.id }]
+#                 )
