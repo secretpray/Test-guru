@@ -1,8 +1,14 @@
+# bin/rails c; load './db/seeds.rb'
 # create user
-USER_DATA = [%w[Александр Иванов alex@mail.com alex 12345], %w[Максим Петров max@mail.com max 12321], %w[Дмитрий Сидоров dim@mail.com dim 54321]]
-
-USER_DATA.each do |item|
-  User.find_or_create_by(first_name: item[0], last_name: item[1], email: item[2], login: item[3], password_digest: item[4])
+USERS = [
+  { first_name: 'Александр', last_name: 'Иванов', email: 'alex@mail.com', login: 'alex', password_digest: '12345' },
+  { first_name: 'Максим', last_name: 'Петров', email: 'max@mail.com', login: 'max', password_digest: '54321' },
+  { first_name: 'Дмитрий', last_name: 'Сидоров', email: 'dim@mail.com', login: 'dim', password_digest: '54321' },
+  { first_name: 'Антон', last_name: 'Ткаченко', email: 'antm@mail.com', login: 'ant', password_digest: '5557721' },
+  { first_name: 'Сергей', last_name: 'Симонов', email: 'sss@mail.com', login: 'sss', password_digest: '09054321' }
+]
+USERS.each do |user|
+  User.find_or_create_by(user)
 end
 
 DATA_TEST =
@@ -19,6 +25,7 @@ DATA_TEST =
    }
  ]
 
+# create category-tests-question-answer
 DATA_TEST.first.each do |category, tests|
  # category create
  db_category = Category.find_or_create_by(title: category)
@@ -36,13 +43,20 @@ DATA_TEST.first.each do |category, tests|
  end
 end
 
-# create UserTest
+# create tests_users
 User.all.each do |user|
   current_user = user 
   Test.all.each do |test|
     TestsUser.find_or_create_by(user_id: current_user.id, test_id: test.id)
   end
 end
+
+
+# USER_DATA = [%w[Александр Иванов alex@mail.com alex 12345], %w[Максим Петров max@mail.com max 12321], %w[Дмитрий Сидоров dim@mail.com dim 54321]]
+
+# USER_DATA.each do |item|
+#   User.find_or_create_by(first_name: item[0], last_name: item[1], email: item[2], login: item[3], password_digest: item[4])
+# end
 
 # User.create([{ :first_name => 'Anton', :last_name => 'Gondon', :email => 'gnd@mail.com' , :login => 'gondon', :password_digest => 12222222 }])
 # #
