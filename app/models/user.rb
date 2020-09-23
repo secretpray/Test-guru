@@ -7,6 +7,6 @@ class User < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
 
   def by_level(level)
-    tests.where("level = :level", level: level).distinct # tests.where(level: level)
+    tests.where(level: level)
   end
 end

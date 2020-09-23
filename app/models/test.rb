@@ -13,5 +13,14 @@ class Test < ApplicationRecord
   scope :medium, -> { by_level(2..4) } # where(level: [2,3,4])
   scope :hard, -> { by_level(5..Float::INFINITY) } # where(level: [5..Float::INFINITY]) or where(level: (5..))
   scope :by_level, -> (level) { where(level: level) }
-  scope :by_category, -> (category) { joins(:category).where(categories: {title: category.to_s}) } # Test.by_category(:backend).order(title: :desc).pluck(:title)
+  scope :by_category, -> (category) { joins(:category).where(categories: {title: category.to_s}) }
+
+  def self.sorted_names_by_category(category, sort = :asc)
+    by_category(category).order(title: sort.to_sym).pluck(:title)
+  end
+
+  def self.name_sorted(sort = :asc)
+    order(title: sort.to_sym).pluck(:title)
+  end
 end
+
