@@ -6,8 +6,6 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    @questions = @test.questions
-    @questions_list = @questions.map { |question| question.body.concat("\n") }
     render inline: '<h2><%= @test.title %></h2><ul><% @test.questions.each do |question| %><li><%= link_to question.body,'\
                     ' question_path(question) %></li><% end %></ul><div><%= link_to \'Новый вопрос\', { controller: "questions", action: "new" } %></div>'
   end
@@ -20,10 +18,8 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    # render plain: "Вопрос удален."
-
+  
     redirect_to test_questions_path(@question.test), notice: 'Вопрос удален.'
-    # redirect_to @question.test, notice: 'Вопрос удален.'
   end
 
   def create
