@@ -14,11 +14,11 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
+    @question = @test.questions.new
   end
 
   def create
-    @question = Question.new(question_params)
+    @question = @test.questions.new(question_params)
 
     if @question.save
       redirect_to @question
@@ -38,14 +38,13 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
 
-    # redirect_to test_path(@question.test), notice: 'Вопрос удален.'
     redirect_to test_questions_path(@question.test), notice: 'Вопрос удален.'
   end
 
   private
 
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 
   def find_test
