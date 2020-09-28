@@ -1,40 +1,42 @@
 class TestsController < ApplicationController
 
-  # before_action :find_category, only: %i[index new create]
-  before_action :find_test, only: %i[show destroy]
+  before_action :find_test, only: %i[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
-    render plain: Test.all.name_sorted
+    @tests = Test.all
   end
 
-  def show
-    render inline:  "<p>Тест №<%=params[:id]%> категории '<%=@test.title%>':</p>"\
-                    '<h1><%= @test.title %></h1><ul><% @test.questions.each do |question| %>'\
-                    '<li><%= question.body %></li><% end %></ul></ul><div>'
+  def show; end
+
+  def new
+    @test = Test.new
   end
 
-  def new; end
-
-  def search
-    result = ["Class: #{params.class}", "Parameters: #{params.inspect}"]
-    render plain: result.join("\n")
-  end
+  def edit; end
 
   def create
-    @category = Category.last
-    test = @category.tests.new(test_params)
+    @test = Test.new(test_params)
 
-    if test.save
-     redirect_to action: :index
+    if @test.save
+     redirect_to @test
     else
-      render plain: "Тест не соотвествует требованиям!"
+      render :new
     end
   end
 
-  def start
-    render html: '<h1>Start certain test..</h1>'.html_safe
+  def update
+    if @test.update(test_params)
+      redirect_to @test
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @test.destroy
+    redirect_to tests_path
   end
 
   private
