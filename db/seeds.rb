@@ -1,5 +1,6 @@
 # bin/rails c; load './db/seeds.rb'
 # create user
+
 USERS = [
   { first_name: 'Александр', last_name: 'Иванов', email: 'alex@mail.com', login: 'alex', password_digest: '12345' },
   { first_name: 'Максим', last_name: 'Петров', email: 'max@mail.com', login: 'max', password_digest: '54321' },
@@ -27,42 +28,22 @@ DATA_TEST =
 
 # create category-tests-question-answer
 DATA_TEST.first.each do |category, tests|
- # category create
  db_category = Category.find_or_create_by(title: category)
  tests.each do |test, questions|
-   # create test
-   db_test = Test.find_or_create_by(title: test, author_id: rand(0..User.count), level: rand(1..3), category_id: db_category.id)
+   db_test = Test.find_or_create_by(title: test, author_id: rand(0..User.count), level: rand(0..5), category_id: db_category.id)
    questions.each do |question, answers|
-     #create question
      db_question = Question.find_or_create_by(body: question, test_id: db_test.id)
      answers.each_with_index do |answer, index|
-       # create answer
        Answer.find_or_create_by(body: answer, correct: index.zero?, question_id: db_question.id)
      end
    end
  end
 end
 
-# create tests_users
+# test_passages
 User.all.each do |user|
   current_user = user 
   Test.all.each do |test|
-    TestsUser.find_or_create_by(user_id: current_user.id, test_id: test.id)
+    TestPassage.find_or_create_by(user_id: current_user.id, test_id: test.id, current_question_id: rand(1..Question.count))
   end
 end
-
-
-# USER_DATA = [%w[Александр Иванов alex@mail.com alex 12345], %w[Максим Петров max@mail.com max 12321], %w[Дмитрий Сидоров dim@mail.com dim 54321]]
-
-# USER_DATA.each do |item|
-#   User.find_or_create_by(first_name: item[0], last_name: item[1], email: item[2], login: item[3], password_digest: item[4])
-# end
-
-# User.create([{ :first_name => 'Anton', :last_name => 'Gondon', :email => 'gnd@mail.com' , :login => 'gondon', :password_digest => 12222222 }])
-# #
-# TestsUser.create(
-#                 [{ user_id: User.last.id, test_id: 6 },
-#                  { user_id: User.last.id, test_id: 2 },
-#                  { user_id: User.last.id, test_id: 4 }]
-#                 )
-# level 2 (test.id 6), level 3 (2, 4)

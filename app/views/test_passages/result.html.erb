@@ -1,0 +1,13 @@
+<p>
+	<% if @test_passage.success? %>
+		<strong class="test_passed_successfully"> 
+			<h1>Тест "<%= @test_passage.test.title %>" успешно пройден! (<%= @test_passage.success_percent %>%)</h1>
+		</strong>
+	<% else %>
+		<strong class="test_passed_unsuccessfully"> 
+			<h1>Тест "<%= @test_passage.test.title %>" провален! (<%= @test_passage.success_percent %>%)</h1>
+		</strong>
+	<% end %>
+</p>
+ 
+<%= render 'shared/back_button', caption: 'К списку тестов', path:  tests_path %> 

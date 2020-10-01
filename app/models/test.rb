@@ -1,11 +1,14 @@
 class Test < ApplicationRecord
   belongs_to :category
-  belongs_to :author, class_name: 'User', foreign_key: 'author_id' # pp Test.where(author_id: 2)
+  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   has_many :questions, dependent: :destroy
-  has_many :tests_users
-  has_many :users, through: :tests_users
+  has_many :test_passages, dependent: :destroy
+  has_many :users, through: :test_passages
 
-  validates :title, presence: true, uniqueness: { scope: :level }
+
+  validates :title, presence: true, uniqueness: { case_sensitive: false,
+                                                  scope: :level,
+                                                  message: 'Test title and level not unique' }
   validates :level, presence: true,
                     numericality: { only_integer: true, greater_than_or_equal_to: 0 } # unless less_than: 0
 

@@ -1,0 +1,21 @@
+<h1>Вопрос</h1>
+
+<p>
+  <%= @answer.question.body %>
+</p>
+
+<%= render 'shared/notice' %>
+
+<%= link_to 'Изменить >', edit_answer_path(@answer) %>
+<p>
+  <b>Ответ:</b>
+  <%= @answer.body %>
+</p>
+
+<p>
+  <b>Правильный:</b>
+  <%= @answer.correct %>
+</p>
+
+
+<%= render 'back_button' %>

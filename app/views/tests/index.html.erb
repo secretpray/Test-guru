@@ -1,16 +1,18 @@
-<h1>Tricky Test</h1>
+<h1>Тесты</h1>
 
+<%= render 'shared/notice' %>
 <p>
-  <%= link_to 'New test >', new_test_path %>
+<%= link_to 'Новый тест >', new_test_path %>
 </p>
-
+<br>
 <table>
   <tr>
-    <th>Title</th>
-    <th>Level</th>
-    <th>Q-ty questions</th>
-    <th colspan="3">Action</th>
+    <th>Название</th>
+    <th>Уровень</th>
+    <th>Количество вопросов</th>
+    <th colspan="4">Действия</th>
   </tr>
 
   <%= render @tests %>
 </table>
+<br><br>
