@@ -21,7 +21,8 @@ class QuestionsController < ApplicationController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to @question
+      redirect_to test_path(@question.test), notice: 'Вопрос сохранен.'
+      # redirect_to @question
     else
       render :edit
     end
@@ -29,7 +30,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to @question
+      redirect_to test_path(@question.test), notice: 'Вопрос изменен.'
     else
       render :edit
     end
@@ -38,7 +39,8 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
 
-    redirect_to test_questions_path(@question.test), notice: 'Вопрос удален.'
+    redirect_to test_path(@question.test), notice: 'Вопрос удален.'
+    # redirect_to question_path(@question.test), notice: 'Вопрос удален.'
   end
 
   private

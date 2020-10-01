@@ -7,6 +7,8 @@ class Answer < ApplicationRecord
   scope :correct, -> { where(correct: true) }
 
   def validate_max
-    errors.add(:base, 'Не больше 4 ответов') if question.answers.count >= 4
+    return if question.answers.count < 4
+
+    errors.add(:base, 'Не больше 4 ответов')
   end
 end
