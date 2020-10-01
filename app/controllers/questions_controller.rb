@@ -22,7 +22,6 @@ class QuestionsController < ApplicationController
 
     if @question.save
       redirect_to test_path(@question.test), notice: 'Вопрос сохранен.'
-      # redirect_to @question
     else
       render :edit
     end
@@ -40,7 +39,6 @@ class QuestionsController < ApplicationController
     @question.destroy
 
     redirect_to test_path(@question.test), notice: 'Вопрос удален.'
-    # redirect_to question_path(@question.test), notice: 'Вопрос удален.'
   end
 
   private
