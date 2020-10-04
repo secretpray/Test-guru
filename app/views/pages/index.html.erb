@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test Guru</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="desc">
+          <span>Программа для тестирования знаний</span>
+        </div>
+      </div>
+      <div class="element right">
+        <div class="element-header">
+          <span>Краткое описание</span>
+        </div>
+        <div class="element-body">
+          <p>
+            Цель проекта - создание приложение для составления тестов, проведение тестирования и оценки знаний. <br><br>
+            Выполняется в рамках учебного курса <a target="_blank" class="socnet-link" href="http://www.thinknetica.com/">Thinkmetica</a>)<br>
+          </p>
+        </div>
+      </div>
+      <div class="element left">
+        <div class="element-header">
+          <span>Преимущества:</span>
+        </div>
+        <div class="element-body">
+          <ul>
+            <li>Гибкое составление тестов</li>
+            <li>Уровни сложности в заданиях</li>
+            <li>Автоматизированная проверка</li>
+            <li>Групповые политики доступа</li>
+          </ul>
+        </div>
+        <div class="footer"></div>
+      </div>
+      <div class="center">
+        <% if logged_in? %>
+          <p style="text-align: center", class="app-welcome-text"> Вы можете
+            <%= link_to 'выбрать test', tests_path %> для прохождения или
+            <%= link_to 'создать новый.', new_test_path %>
+          </p>
+        <% else %>
+          <p style="text-align: center", class="app-welcome-title"> Чтобы начать тестирование</p>
+          <p style="text-align: center", class="app-welcome-text">
+            <%= link_to 'зарегистрируйтесь', signup_path unless current_page?(signup_path) %> или
+            <%= link_to 'войдите', login_path unless current_page?(login_path) %> в свой аккаунт.
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>

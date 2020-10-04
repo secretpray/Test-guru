@@ -1,11 +1,26 @@
+<div class="nav">
+  <div class="app-title">
+    <% if current_page?(root_path) %>
+      <%= TestGuru::NAME %>
+    <% else %>
+      <%= link_to TestGuru::NAME, root_path%>
+    <% end %>
+  </div>
 
-<div class="container">
-  <header>
-    <div class="textLogo" text-align: right;>
-      TEST GURU
-      <!--<%= link_to TestGuru::NAME, github_url(TestGuru::GITHUB_AUTHOR, TestGuru::GITHUB_REPO), target: :blank %>-->
-    </div>
-  </header>
-  <div class="centerSide">
+
+  <div class="right">
+    <% if logged_in? %>
+      <div>Guru: <%= content_tag :b, current_user.login , class: 'user' %></div>
+      <div>
+        <%= link_to 'Logout', logout_path, method: :delete, data: { confirm: 'Do you really want logout?'} %>
+      </div>
+    <%else%>
+      <div>
+        <%= link_to 'Login', login_path unless current_page?(login_path) %>
+      </div>
+      <div>
+        <%= link_to 'Sign up', signup_path unless current_page?(signup_path) %>
+      </div>
+    <% end %>
   </div>
 </div>

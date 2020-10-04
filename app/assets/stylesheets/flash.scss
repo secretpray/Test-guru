@@ -1,0 +1,19 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.flash {
+  border: 2px solid;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.flash.alert {
+  background-color: indianred;
+  color: white;
+}
+
+.flash.info {
+  background-color: #3c85e0;
+  color: white;
+//border-color: #49bf49;
+}
