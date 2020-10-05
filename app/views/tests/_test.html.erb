@@ -1,6 +1,8 @@
 <tr>
   <td><%= link_to test.title, test_path(test) %></td>
   <td style="text-align: left"><%= test_level(test) %></td>
+  <td><%= test.category.title %>
+  <td><%= test.author.login %></td>
   <td style="text-align: center"><%= test.questions.count %></td>
   <td><%= link_to 'Показать', test_path(test) %></td>
   <td><%= link_to 'Изменить', edit_test_path(test) %></td>
