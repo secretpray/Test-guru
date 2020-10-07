@@ -1,8 +1,5 @@
 <%= render 'shared/notice' %>
-<p>
-<%= link_to 'Новый тест >', new_test_path %>
-</p>
-<br>
+
 <table>
   <tr>
     <th>Название</th>
@@ -10,7 +7,7 @@
     <th>Категория</th>
     <th>Автор</th>
     <th>Количество вопросов</th>
-    <th colspan="4">Действия</th>
+    <th>Действия</th>
   </tr>
 
   <%= render @tests %>

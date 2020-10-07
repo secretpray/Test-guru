@@ -1,10 +1,20 @@
 
 users = User.create([
                       { first_name: 'Ivan', last_name: 'Ivanov',
-                        login: 'iivanov', password_digest: 'pas1', email: 'aaa@bbb.com' },
+                        login: 'iivanov', email: 'aaa@bbb.com',
+                        password: 'ivanivanov', password_confirmation: 'ivanivanov' },
                       { first_name: 'Alex', last_name: 'Petrov',
-                        login: 'apetrov', password_digest: 'pas2', email: 'aaa@bbb1.com' }
+                        login: 'apetrov', email: 'aaa@bbb1.com',
+                        password: 'alexpetrov', password_confirmation: 'alexpetrov' }
                     ])
+
+users.each{ |user| user.confirm }
+
+admin = Admin.create!(name: 'Andre', surname: 'Adminov',
+                       email: 'admin@mail.com',
+                       password: '7865_admin',
+                       password_confirmation: '7865_admin')
+admin.confirm
 
 categories = Category.create!([{title: 'Ruby'},{title: 'Ruby on Rails'}])
 

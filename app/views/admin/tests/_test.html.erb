@@ -1,0 +1,15 @@
+<tr>
+  <td><%= link_to test.title, admin_test_path(test) %></td>
+  <td style="text-align: left"><%= test_level(test) %></td>
+  <td><%= test.category.title %>
+  <td><%= test.author.login %></td>
+  <td style="text-align: center"><%= test.questions.count %></td>
+  <td><%= link_to 'Показать', admin_test_path(test) %></td>
+  <td><%= link_to 'Изменить', edit_admin_test_path(test) %></td>
+  <td>
+    <%= link_to 'Удалить',
+    admin_test_path(test),
+    method: :delete,
+    data: { confirm: 'Are you sure?'} %>
+  </td>
+</tr>

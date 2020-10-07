@@ -1,25 +1,30 @@
 <div class="nav">
   <div class="app-title">
     <% if current_page?(root_path) %>
-      <%= TestGuru::NAME %>
+      <% if admin? %>
+        Admin panel | <%= TestGuru::NAME %>
+      <% else %>
+        <%= TestGuru::NAME %>
+      <% end %>
     <% else %>
       <%= link_to TestGuru::NAME, root_path%>
     <% end %>
   </div>
 
-
   <div class="right">
-    <% if logged_in? %>
-      <div>Guru: <%= content_tag :b, current_user.login , class: 'user' %></div>
+    <% if user_signed_in? %>
       <div>
-        <%= link_to 'Logout', logout_path, method: :delete, data: { confirm: 'Do you really want logout?'} %>
+        Добро пожаловать, <%= content_tag :b, current_user.email, class: 'nav user' %>
+      </div>
+      <div>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Do you really want logout?'} %>
       </div>
     <%else%>
       <div>
-        <%= link_to 'Login', login_path unless current_page?(login_path) %>
+        <%= link_to 'Login', new_user_session_path unless current_page?(new_user_session_path) %>
       </div>
       <div>
-        <%= link_to 'Sign up', signup_path unless current_page?(signup_path) %>
+        <%= link_to 'Sign up', new_user_registration_path unless current_page?(new_user_registration_path) %>
       </div>
     <% end %>
   </div>

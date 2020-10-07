@@ -1,32 +1,14 @@
 Rails.application.routes.draw do
 
   root 'pages#index'
-  # get '/', :to => redirect('about.html')
-  # root 'tests#index'
 
-  get 'sessions/new'
-  get 'users/new'
+  devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
 
-  get :signup, to: 'users#new'
-  get :login, to: 'sessions#new'
-  delete :logout, to: 'sessions#destroy'
-
-  resources :users, only: :create
-  resources :sessions, only: :create
-
-  resources :tests do
-    resources :questions, except: :index, shallow: true do
-      resources :answers, except: :index, shallow: true
-    end
-
+  resources :tests, only: :index do
     member do
       post :start
     end
   end
-
-  get 'questions', to: 'tests#index'
-  get 'answers', to: 'tests#index'
-
 
   resources :test_passages, only: %i[show update] do
     member do
@@ -34,4 +16,11 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :admin do
+    resources :tests do
+      resources :questions, except: :index, shallow: true do
+        resources :answers, except: :index, shallow: true
+      end
+    end
+  end
 end

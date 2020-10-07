@@ -7,9 +7,7 @@ module ApplicationHelper
     link_to name_link, "https://github.com/#{author}/#{repo}", target: :blank
   end
 
-  def flash_message(flash)
-    flash.map do |key, value|
-      content_tag :p, value, class: "flash #{key}"
-    end.join(' ').html_safe
+  def admin?
+    current_user.is_a?(Admin)
   end
 end

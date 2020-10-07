@@ -1,19 +1,19 @@
-require 'digest/sha1'
-
 class User < ApplicationRecord
-  include Auth
+  MAX_EMAIL_STRING = 50
+
+  devise  :database_authenticatable,
+          :registerable,
+          :confirmable,
+          :recoverable,
+          :rememberable,
+          :validatable
 
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
-  has_many :created_tests, class_name: 'Test', foreign_key: 'author_id',
-                           inverse_of: :author, dependent: :destroy
-
-  has_secure_password
 
   validates :first_name, :last_name, :email, :login, presence: true
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
-  # validates :password, confirmation: true
-  # validates :password, presence: true, if: Proc.new { |user| user.password_digest.blank? }
+  validates :login, presence: true, uniqueness: true
+  validates :email, length: { maximum: MAX_EMAIL_STRING }, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
 
   def by_level(level)
     tests.where(level: level)
