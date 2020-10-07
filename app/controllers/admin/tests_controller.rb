@@ -1,6 +1,6 @@
 class Admin::TestsController < Admin::BaseController
 
-  before_action :find_test, only: %i[show edit update destroy start]
+  before_action :find_test, only: %i[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -17,8 +17,7 @@ class Admin::TestsController < Admin::BaseController
   def edit; end
 
   def create
-    @test = Test.new(test_params)
-    # @test = current_user.own_tests.new(test_params)
+    @test = current_user.created_tests.new(test_params)
 
     if @test.save
      redirect_to [:admin, @test], notice: 'Вопрос сохранен.'
@@ -40,23 +39,14 @@ class Admin::TestsController < Admin::BaseController
     redirect_to admin_tests_path, notice: 'Вопрос удален.'
   end
 
-  def start
-    @user.tests.push(@test)
-    redirect_to @user.test_passage(@test)
-  end
-
   private
 
   def test_params
-    params.require(:test).permit(:title, :level, :author_id, :category_id)
+    params.require(:test).permit(:title, :level, :category_id)
   end
 
   def find_test
     @test = Test.find(params[:id])
-  end
-
-  def set_user
-    @user = User.first
   end
 
   def rescue_with_test_not_found

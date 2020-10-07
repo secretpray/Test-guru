@@ -1,13 +1,13 @@
 <% if user_signed_in? %>
   <div class="nav nav-admin">
     <% if current_page?(root_path) %>
-      <% if admin? %>
+      <% if current_user.admin? %>
         <span class="nav-admin title">TestGuru Admin Panel</span>
       <% else %>
         <span class="nav-admin title">TestGuru</span>
       <% end %>
     <% else %>
-      <% if admin? %>
+      <% if current_user.admin? %>
         <span class="nav-admin title">
           <%= link_to 'TestGuru Admin panel', root_path%>
         </span>

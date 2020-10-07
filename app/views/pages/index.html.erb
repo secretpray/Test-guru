@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <% if admin? %>
+    <% if current_user.admin? %>
       <title>Admin panel | Test Guru</title>
     <% else %>
       <title>Test Guru</title>
@@ -43,7 +43,7 @@
       <div>
         <% if user_signed_in? %>
           <p style="text-align: center", class="app-welcome-text"> 
-            <% if admin? %>
+            <% if current_user.admin? %>
               <%= link_to '< Отобразить список тестов.', admin_tests_path %> |
               <%= link_to 'Создать новый тест. >', new_admin_test_path %>
             <% else %>
