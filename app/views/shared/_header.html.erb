@@ -1,7 +1,7 @@
 <div class="nav">
   <div class="app-title">
     <% if current_page?(root_path) %>
-      <% if admin? %>
+      <% if current_user.admin? %>
         Admin panel | <%= TestGuru::NAME %>
       <% else %>
         <%= TestGuru::NAME %>

@@ -1,21 +1,13 @@
 <% if user_signed_in? %>
   <div class="nav nav-admin">
-    <% if current_page?(root_path) %>
-      <% if current_user.admin? %>
-        <span class="nav-admin title">TestGuru Admin Panel</span>
-      <% else %>
-        <span class="nav-admin title">TestGuru</span>
-      <% end %>
+    <% if current_user.admin? %>
+      <span class="nav-admin title">
+        <%= link_to 'TestGuru Admin panel', root_path%>
+      </span>
     <% else %>
-      <% if current_user.admin? %>
-        <span class="nav-admin title">
-          <%= link_to 'TestGuru Admin panel', root_path%>
-        </span>
-      <% else %>
-        <span class="nav-admin title">
-          <%= link_to 'TestGuru', root_path%>
-        </span>
-      <% end %>
+      <span class="nav-admin title">
+        <%= link_to 'TestGuru', root_path%>
+      </span>
     <% end %>
     <div class="nav-admin user">
       Welcome, <b class="nav-admin user-email"><%= current_user.email %></b> Guru |
