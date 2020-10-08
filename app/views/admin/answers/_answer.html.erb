@@ -1,0 +1,12 @@
+<tr>
+  <td><%= link_to answer.body, admin_answer_path(answer) %></td>
+  <td><%= answer.correct %></td>
+  <td><%= link_to 'Показать', admin_answer_path(answer) %></td>
+  <td><%= link_to 'Изменить', edit_admin_answer_path(answer) %></td>
+  <td>
+      <%= link_to 'Удалить', 
+              admin_answer_path(answer),
+              method: :delete,
+              data: { confirm: 'Are you sure?'} %>
+  </td>
+</tr>

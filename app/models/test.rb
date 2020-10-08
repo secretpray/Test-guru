@@ -1,10 +1,9 @@
 class Test < ApplicationRecord
   belongs_to :category
-  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :author, class_name: 'Admin', foreign_key: 'author_id'
   has_many :questions, dependent: :destroy
   has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
-
 
   validates :title, presence: true, uniqueness: { case_sensitive: false,
                                                   scope: :level,
@@ -12,9 +11,9 @@ class Test < ApplicationRecord
   validates :level, presence: true,
                     numericality: { only_integer: true, greater_than_or_equal_to: 0 } # unless less_than: 0
 
-  scope :easy, -> { by_level(0..1) } # where(level: [0,1])
-  scope :medium, -> { by_level(2..4) } # where(level: [2,3,4])
-  scope :hard, -> { by_level(5..Float::INFINITY) } # where(level: [5..Float::INFINITY]) or where(level: (5..))
+  scope :easy, -> { by_level(0..1) } 
+  scope :medium, -> { by_level(2..4) }
+  scope :hard, -> { by_level(5..Float::INFINITY) } 
   scope :by_level, -> (level) { where(level: level) }
   scope :by_category, -> (category) { joins(:category).where(categories: {title: category.to_s}) }
 

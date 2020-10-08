@@ -1,0 +1,19 @@
+<h1>Вопрос</h1>
+
+<p>
+  <%= @answer.question.body %>
+</p>
+
+<%= link_to 'Изменить >', edit_admin_answer_path(@answer) %>
+<p>
+  <b>Ответ:</b>
+  <%= @answer.body %>
+</p>
+
+<p>
+  <b>Правильный:</b>
+  <%= @answer.correct %>
+</p>
+
+
+<%= render 'back_button' %>

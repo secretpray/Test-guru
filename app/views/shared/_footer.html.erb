@@ -1,6 +1,14 @@
-<hr>
-<%= TestGuru::NAME %>, version: <%= TestGuru::VERSION%>. Разработчик программы <%= TestGuru::AUTHOR %>© (<%=current_year%> год)
-<%= github_url(TestGuru::NAME, TestGuru::GITHUB_AUTHOR, TestGuru::GITHUB_REPO) %><br>
-
-<%= TestGuru::DESCRIPTION %><br>
-(<%= link_to TestGuru::PROJECT_DESCRIPTION, TestGuru::PROJECT_LINK, target: :blank %>)
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">
+          TestGuru build <%= TestGuru::VERSION%>. Copyright <%=current_year%> &copy; <%= TestGuru::AUTHOR %>
+          (<%= github_url(TestGuru::NAME, TestGuru::GITHUB_AUTHOR, TestGuru::GITHUB_REPO) %>)
+          <%= TestGuru::DESCRIPTION %>
+          <%= link_to 'Thinknetica', TestGuru::PROJECT_LINK, target: :blank %>
+        </p>
+        </div>
+    </div>
+  </div>
+</footer>

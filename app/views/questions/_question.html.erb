@@ -1,8 +1,8 @@
 <tr>
   <td><%= link_to question.body, question_path(question) %></td>
   <td style="text-align: center"><%= question.answers.count %></td>
-  <td><%= link_to 'Изменить', edit_question_path(question) %> |</td>
-  <td><%= link_to 'Удалить', question_path(question),
+  <td><%= link_to 'Изменить', edit_admin_question_path(question) %> |</td>
+  <td><%= link_to 'Удалить', admin_question_path(question),
     method: :delete, data: { confirm: 'Are you sure?'} %> |</td>
   <td><%= link_to 'Показать ответы', question_path(question) %></td>
 </tr>

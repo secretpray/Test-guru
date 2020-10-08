@@ -2,15 +2,18 @@
 # create user
 
 USERS = [
-  { first_name: 'Александр', last_name: 'Иванов', email: 'alex@mail.com', login: 'alex', password_digest: '12345' },
-  { first_name: 'Максим', last_name: 'Петров', email: 'max@mail.com', login: 'max', password_digest: '54321' },
-  { first_name: 'Дмитрий', last_name: 'Сидоров', email: 'dim@mail.com', login: 'dim', password_digest: '54321' },
-  { first_name: 'Антон', last_name: 'Ткаченко', email: 'antm@mail.com', login: 'ant', password_digest: '5557721' },
-  { first_name: 'Сергей', last_name: 'Симонов', email: 'sss@mail.com', login: 'sss', password_digest: '09054321' }
+  { first_name: 'Александр', last_name: 'Иванов', email: 'alex@mail.com', login: 'alex', password: 'ivanivanov', password_confirmation: 'ivanivanov' },
+  { first_name: 'Максим', last_name: 'Петров', email: 'max@mail.com', login: 'max', password: 'ivanivanov', password_confirmation: 'ivanivanov' },
+  { first_name: 'Дмитрий', last_name: 'Сидоров', email: 'dim@mail.com', login: 'dim', password: 'ivanivanov', password_confirmation: 'ivanivanov' },
+  { first_name: 'Антон', last_name: 'Ткаченко', email: 'antm@mail.com', login: 'ant', password: 'ivanivanov', password_confirmation: 'ivanivanov' },
+  { first_name: 'Сергей', last_name: 'Симонов', email: 'sss@mail.com', login: 'sss', password: 'ivanivanov', password_confirmation: 'ivanivanov' }
 ]
+
 USERS.each do |user|
-  User.find_or_create_by(user)
+  db_users = User.find_or_create_by(user)
 end
+
+User.update_all confirmed_at: DateTime.now
 
 DATA_TEST =
 [
@@ -40,7 +43,7 @@ DATA_TEST.first.each do |category, tests|
  end
 end
 
-# test_passages
+
 User.all.each do |user|
   current_user = user 
   Test.all.each do |test|

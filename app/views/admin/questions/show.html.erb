@@ -1,0 +1,23 @@
+<h1>Тест: <%= @question.test.title %></h1>
+
+<p>
+  <strong>Вопрос:</strong>
+  <%= @question.body %>
+</p>
+
+<h2>Ответы:</h2>
+
+<%= link_to 'Новый ответ >', new_admin_question_answer_path(@question) %>
+<br><br>
+<table>
+  <tr>
+    <th>Ответ</th>
+    <th>Правильный?</th>
+    <th colspan="3">Действия</th>
+  </tr>
+    <%= render @question.answers %>
+</table>
+<br>
+<%= link_to '< Назад к тесту', admin_test_path(@question.test) %>
+
+
