@@ -1,13 +1,13 @@
 <p>
 	<% if @test_passage.success? %>
 		<strong class="test_passed_successfully"> 
-			<h1>Тест "<%= @test_passage.test.title %>" успешно пройден! (<%= @test_passage.success_percent %>%)</h1>
+			<h1><%= t('.test') %> "<%= @test_passage.test.title %>" <%= t('.success') %>: (<%= @test_passage.success_percent %>%)</h1>
 		</strong>
 	<% else %>
-		<strong class="test_passed_unsuccessfully"> 
-			<h1>Тест "<%= @test_passage.test.title %>" провален! (<%= @test_passage.success_percent %>%)</h1>
+		<strong class="test_passed_unsuccessfully">
+			<h1><%= t('.test') %> "<%= @test_passage.test.title %>" <%= t('.unsuccess') %>: (<%= @test_passage.success_percent %>%)</h1>
 		</strong>
 	<% end %>
 </p>
  
-<%= render 'shared/back_button', caption: 'К списку тестов', path:  tests_path %> 
+<%= render 'shared/back_button', caption: t('.back'), path:  tests_path %> 

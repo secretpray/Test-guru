@@ -12,30 +12,30 @@
     <div class="container">
       <div class="header">
         <div class="title_center">
-          <span>Программа для тестирования знаний</span>
+          <span><%= t('.title') %></span>
         </div>
       </div>
       <div class="element right">
         <div class="element-header">
-          <span>Краткое описание:</span>
+          <span><%= t('.description') %>:</span>
         </div>
         <div class="element-body">
           <p>
-            Цель проекта - создание приложение для составления тестов, проведение тестирования и оценки знаний. <br><br>
-            Выполняется в рамках учебного курса <a target="_blank" class="socnet-link" href="http://www.thinknetica.com/">Thinkmetica</a>)<br>
+            <%= t('.goal') %> <br><br>
+            <%= t('.perfomed') %> <a target="_blank" class="socnet-link" href="http://www.thinknetica.com/">Thinkmetica</a>)<br>
           </p>
         </div>
       </div>
       <div class="element left">
         <div class="element-header">
-          <span>Преимущества:</span>
+          <span><%= t('.benefits') %></span>
         </div>
         <div class="element-body">
           <ul>
-            <li>Гибкое составление тестов</li>
-            <li>Уровни сложности в заданиях</li>
-            <li>Автоматизированная проверка</li>
-            <li>Групповые политики доступа</li>
+            <li><%= t('.flex') %></li>
+            <li><%= t('.level') %></li>
+            <li><%= t('.auto') %></li>
+            <li><%= t('.group') %></li>
           </ul>
         </div>
         <div class="footer"></div>
@@ -44,10 +44,10 @@
         <% if user_signed_in? %>
           <p style="text-align: center", class="app-welcome-text"> 
             <% if current_user.admin? %>
-              <%= link_to '< Отобразить список тестов.', admin_tests_path %> |
-              <%= link_to 'Создать новый тест. >', new_admin_test_path %>
+              <%= link_to t('.view'), admin_tests_path %> |
+              <%= link_to t('.create'), new_admin_test_path %>
             <% else %>
-              <%= link_to 'Выберите тест для прохождения.', tests_path %>
+              <%= link_to t('.choose'), tests_path %>
             <% end %>
           </p>
         <% else %>

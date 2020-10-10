@@ -1,13 +1,13 @@
-<%= render 'shared/notice' %>
+<h1><%= t('.header') %></h1>
 
 <table>
   <tr>
-    <th>Название</th>
-    <th>Уровень</th>
-    <th>Категория</th>
-    <th>Автор</th>
-    <th>Количество вопросов</th>
-    <th>Действия</th>
+    <th><%= t('.title') %></th>
+    <th><%= t('.level') %></th>
+    <th><%= t('.category') %></th>
+    <th><%= t('.author') %></th>
+    <th><%= t('.questions') %></th>
+    <th><%= t('.actions') %></th>
   </tr>
 
   <%= render @tests %>

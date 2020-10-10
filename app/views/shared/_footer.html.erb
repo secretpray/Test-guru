@@ -3,9 +3,9 @@
     <div class="row">
       <div class="col-md-8 col-sm-6 col-xs-12">
         <p class="copyright-text">
-          TestGuru build <%= TestGuru::VERSION%>. Copyright <%=current_year%> &copy; <%= TestGuru::AUTHOR %>
+          TestGuru v<%= TestGuru::VERSION%>. Copyright <%=current_year%> &copy; <%= TestGuru::AUTHOR %>
           (<%= github_url(TestGuru::NAME, TestGuru::GITHUB_AUTHOR, TestGuru::GITHUB_REPO) %>)
-          <%= TestGuru::DESCRIPTION %>
+          <%= t('.project_description') %>
           <%= link_to 'Thinknetica', TestGuru::PROJECT_LINK, target: :blank %>
         </p>
         </div>

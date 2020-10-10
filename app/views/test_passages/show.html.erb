@@ -1,12 +1,13 @@
-<h1>Прохождение теста: "<%= @test_passage.test.title %>"</h1>
+<h1><%= t('.header') %>: "<%= @test_passage.test.title %>"</h1>
 
 <p>
-	 Вопрос <%= @test_passage.current_question_number %> из <%= @test_passage.test.questions.count %>
+	 <%= t('.question') %> <%= @test_passage.current_question_number %> 
+   <%= t('.from') %> <%= @test_passage.test.questions.count %>
 </p>
 
 <p>
- <b>Категория:</b> <%= @test_passage.test.category.title %><br>
- <b>Уровень:</b> <%= test_level(@test_passage.test) %> (<%= @test_passage.test.level %>)<br>
+ <b><%= t('.category') %>:</b> <%= @test_passage.test.category.title %><br>
+ <b><%= t('.level') %>:</b> <%= test_level(@test_passage.test) %> (<%= @test_passage.test.level %>)<br>
 </p>
 
 <p>
@@ -23,5 +24,5 @@
    </p>
   <% end %>
 
-	<p><%= form.submit 'Далее' %></p>
+	<p><%= form.submit t('.next') %></p>
 <% end %>

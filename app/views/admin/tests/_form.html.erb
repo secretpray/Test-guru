@@ -1,5 +1,3 @@
-<h2><%= test_header(@test) %></h2>
-
 <%= form_with model: [:admin, @test], local: true do |form| %>
   <%= render 'shared/errors', resource: @test %>
 
@@ -17,8 +15,6 @@
     <%= form.label :category_id %>:
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </div>
-
-  <%#  = form.hidden_field :author_id, value: current_user.id %>
 
   <p><%= form.submit %></p>
 <% end %>

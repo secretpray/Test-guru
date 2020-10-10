@@ -2,16 +2,21 @@
   <div class="nav nav-admin">
     <% if current_user.admin? %>
       <span class="nav-admin title">
-        <%= link_to 'TestGuru Admin panel', root_path%>
-      </span>
-    <% else %>
-      <span class="nav-admin title">
-        <%= link_to 'TestGuru', root_path%>
+        <%= link_to t('.apanel'), root_path %>
       </span>
     <% end %>
+    <span class="nav-admin title">
+      <%= link_to 'TestGuru', root_path%>
+    </span>
     <div class="nav-admin user">
-      Welcome, <b class="nav-admin user-email"><%= current_user.email %></b> Guru |
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+      <%= t('.welcome') %>, <b class="nav-admin user-email"><%= current_user.email %></b> Guru |
+      <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
+    </div>
+    <div class="nav-admin langr <%= " active" if I18n.locale == :ru %>">
+     <%= link_to 'Рус', { lang: :ru } %>
+    </div>
+    <div class="nav-admin lang<%= " active" if I18n.locale == :en %>">
+     <%= link_to 'Eng ', { lang: :en } %>
     </div>
   </div>
 <% end %>

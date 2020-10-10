@@ -21,17 +21,16 @@ class Admin::QuestionsController < Admin::BaseController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      # redirect_to admin_test_path(@question.test), notice: 'Вопрос сохранен.'
-      redirect_to [:admin, @question], notice: 'Вопрос сохранен.'
+      redirect_to [:admin, @question], notice: t('.success')
     else
+      flash[:notice] = t('.not_success')
       render :edit
     end
   end
 
   def update
     if @question.update(question_params)
-      redirect_to [:admin, @question], notice: 'Вопрос изменен.'
-      # redirect_to admin_test_path(@question.test), notice: 'Вопрос изменен.'
+      redirect_to [:admin, @question], notice: t('.success')
     else
       render :edit
     end
@@ -40,7 +39,7 @@ class Admin::QuestionsController < Admin::BaseController
   def destroy
     @question.destroy
 
-    redirect_to admin_test_path(@question.test), notice: 'Вопрос удален.'
+    redirect_to admin_test_path(@question.test), notice: t('.success')
   end
 
   private

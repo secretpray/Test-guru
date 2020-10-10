@@ -1,33 +1,175 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  helpers:
+    :true: 'Yes'
+    :false: 'No'
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+      question:
+        create: "Create question"
+        update: "Update question"
+      answer:
+        create: "Create answer"
+        update: "Update answer"
+    label:
+      test:
+        title: "Titile"
+        level: "Level"
+        category_id: "Category"
+      question:
+        question: "Question"
+      answer:
+        body: "Answer"
+        correct: "Corrrect"
+    select:
+      prompt: "Select category"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    footer:
+      application_description: 'The education tests system:
+                                Allows users to pass tests.
+                                Users can also create their own tests.'
+      project_description: 'Project created at the school "Thinknetica"'
+
+  tests:
+    index:
+      header: "Tests list"
+      title: "Title"
+      level: "Level"
+      questions: "Questions"
+    test:
+      start: "Start"
+
+  test_passages:
+    result:
+      header: "The test was completed!"
+      test: "Test"
+      success: "passed successfully!"
+      unsuccess: "passed unsuccessfully"
+      back: "Back to Tests"
+
+    show:
+      header: "Passing the"
+      question: "Question"
+      from: "from"
+      category: "Category"
+      level: "Level"
+      next: "Next"
+
+  admin:
+    nav:
+      header: "admin panel"
+      welcome: "Welcome"
+      logout: "Logout"
+      apanel: "Admin panel /"
+    base:
+      admin_require:
+        norights: "You are not an admin."
+    tests:
+      create:
+        success: "Test was successfully created."
+        not_success: "Test was unsuccessfully created."
+      show:
+        title: "Test"
+        edit: "Edit"
+        question: "Question"
+        answers: "Q-ty answers"
+        actions: "Actions"
+        new_question: "New question >"
+      index:
+        header: "Tests list"
+        title: "Title"
+        level: "Level"
+        category: "Category"
+        author: "Author"
+        questions: "Questions"
+        actions: "Actions"
+        create: "New test"
+      new:
+        header: "Create new Test"
+      edit:
+        header: "Edit test: %{title}"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+      form:
+        back: "Back"
+        create: "Create test"
+        update: "Update test"
+    questions:
+      new:
+        title: "Create Question"
+      create:
+        success: "Question successfully created"
+        not_success: "Question unsuccessfully created"
+      edit:
+        header: "Edit question: %{title}"
+      update:
+        success: "Question successfully updated"
+      destroy:
+        success: "Question successfully deleted"
+      show:
+        title: "Test"
+        answers: "Answers"
+        question: "Question"
+        new_answer: 'New Answer >'
+        answer: "Answer"
+        correctly: "Correct?"
+        action: "Action"
+        back: "< Back to test"
+      question:
+        edit: "Edit"
+        delete: "Delete"
+        show_answers: "Show answers"
+      form:
+        back: "< Back to Test"
+        create: "Create new"
+        edit: "Edit"
+        question: "question"
+    answers:
+      create:
+        success: "Answer successfully created"
+        not_success: "Answer unsuccessfully created!"
+      update:
+        success: "Answer successfully updated"
+      destroy:
+        success: "Answer successfully deleted"
+      new:
+        create_new: "New Answer"
+      edit:
+        edit_header: "Edit answer"
+      show:
+        question: 'Question'
+        edit: "Edit answer >"
+        answer: "Answer"
+        correct: "Correct"
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+      back_button:
+        back: "Back to Question"
+  pages:
+    index:
+      create: "Create new Test >"
+      view: "< View tetst list"
+      title: "Tricky Testing Program"
+      benefits: "Benefits:"
+      goal: "The goal of the project is to create an application for writing tests, testing and assessing knowledge."
+      perfomed: "Performed as part of the training course"
+      description: "Short description"
+      flex: "Convenient test writing"
+      level: "Difficulty levels in tasks"
+      auto: "Automated check"
+      group: "Group access policies"
+      choose: "Choose a test to pass"
+
+  test_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test"

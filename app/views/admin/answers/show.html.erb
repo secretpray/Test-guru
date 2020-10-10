@@ -1,17 +1,17 @@
-<h1>Вопрос</h1>
+<h1><%= t('.question') %></h1>
 
 <p>
   <%= @answer.question.body %>
 </p>
 
-<%= link_to 'Изменить >', edit_admin_answer_path(@answer) %>
+<%= link_to t('.edit'), edit_admin_answer_path(@answer) %>
 <p>
-  <b>Ответ:</b>
+  <b><%= t('.answer') %>:</b>
   <%= @answer.body %>
 </p>
 
 <p>
-  <b>Правильный:</b>
+  <b><%= t('.correct') %>:</b>
   <%= @answer.correct %>
 </p>
 

@@ -1,0 +1,17 @@
+en:
+  activerecord:
+    attributes:
+      test:
+        title: "Title"
+        category: "Category"
+      question:
+        body: "Body question"
+      answer:
+        body: "Body answer"
+    models:
+      user:
+        one: User
+        other: Users
+      test: "Test"
+      question: "Question"
+      answer: "Answer"
