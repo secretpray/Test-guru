@@ -24,6 +24,18 @@
   float: right;
 }
 
+.nav-admin.lang {
+  float: right;
+  padding: 0px 10px;
+  text-decoration: none;
+}
+
+.nav-admin.langr {
+  float: right;
+  padding: 0 15px 0 0;
+  text-decoration: none !important;
+}
+
 .nav-admin.user-email {
   text-decoration: underline;
 }
@@ -31,4 +43,11 @@
 .nav.nav-admin
 a {
   color: #ffffff;
+}
+
+.active {
+  font-size: large;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0px 5px;
 }

@@ -1,0 +1,51 @@
+ru:
+  activerecord:
+    attributes:
+      test:
+        title: "Поле заголовка теста"
+        category: "Поле категории"
+      question:
+        body: "После вопроса"
+      answer:
+        body: "Поле ответа"
+
+    models:
+      user:
+        few: "Пользователя"
+        many: "Пользователей"
+        one: "Пользователь"
+        other: "Пользователи"
+
+    errors:
+        models:
+          user:
+            attributes:
+              username:
+                blank: "не может быть пустым"
+                taken: "уже существует"
+              email:
+                blank: "не может быть пустым"
+                taken: "уже существует"
+                too_long: "не более 50 символов"
+                invalid: "некорректный формат"
+              password:
+                blank: "не может быть пустым"
+                too_short: "должен быть не менее %{count} символов"
+          test:
+            test: "Тест"
+            attributes:
+              title:
+                blank: "не может быть пустым"
+                taken: "уже существует"
+              category:
+                required: "не может быть пустым"
+          question:
+            question: "Вопрос"
+            attributes:
+              body:
+                blank: "не может быть пустым"
+          answer:
+            answer: "Ответ"
+            attributes:
+              body:
+                blank: "не может быть пустым"

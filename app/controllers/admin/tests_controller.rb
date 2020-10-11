@@ -20,15 +20,16 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.created_tests.new(test_params)
 
     if @test.save
-     redirect_to [:admin, @test], notice: 'Вопрос сохранен.'
+     redirect_to [:admin, @test], notice: t('.success')
     else
+      flash[:notice] = t('.not_success')
       render :new
     end
   end
 
   def update
     if @test.update(test_params)
-      redirect_to [:admin, @test], notice: 'Вопрос изменен.'
+      redirect_to [:admin, @test], notice: t('.success')
     else
       render :edit
     end
@@ -36,7 +37,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-    redirect_to admin_tests_path, notice: 'Вопрос удален.'
+    redirect_to admin_tests_path, notice: t('.success')
   end
 
   private

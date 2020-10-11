@@ -18,15 +18,16 @@ class Admin::AnswersController < Admin::BaseController
     @answer = @question.answers.new(answer_params)
     
     if @answer.save
-      redirect_to [:admin, @answer], notice: 'Ответ успешно создан' 
+      redirect_to [:admin, @answer], notice: t('.success') 
     else
+      flash[:notice] = t('.not_success')
       render :new
     end
   end
 
   def update
     if @answer.update(answer_params)
-      redirect_to [:admin, @answer], notice: 'Ответ успешно изменен'
+      redirect_to [:admin, @answer], notice: t('.success')
     else
       render :edit
     end
@@ -34,7 +35,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def destroy
     @answer.destroy
-    redirect_to [:admin, @answer.question], notice: 'Ответ успешно удален'
+    redirect_to [:admin, @answer.question], notice: t('.success')
   end
 
   private

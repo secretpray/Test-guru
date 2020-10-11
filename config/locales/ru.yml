@@ -1,0 +1,177 @@
+ru:
+  helpers:
+    :true: 'Да'
+    :false: 'Нет'
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+      question:
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
+      answer:
+        create: "Создать ответ"
+        update: "Обновить ответ"
+
+    label:
+      test:
+        title: "Название"
+        level: "Уровень сложности"
+        category_id: "Категория"
+      question:
+        question: "Вопрос"
+      answer:
+        body: "Ответ"
+        correct: "Верный"
+    select:
+      prompt: "Выберите категорю"
+
+  shared:
+    errors:
+      header:
+        one: "Обнаружена %{count} ошибка"
+        many: "Обнаружено %{count} ошибок"
+        few: "Обнаружено %{count} ошибки"
+        other: "Обнаружено %{count} ошибки"
+    footer:
+      application_description: 'Система обучвющих тестов.
+                                Позволяет пользовавателям проходить тесты.
+                                Также есть возможность моздавать тесты.'
+      project_description: 'Проект создан для для онлайн-школы "Thinknetica"'
+
+  tests:
+    index:
+      header: "Список тестов"
+      title: "Название"
+      level: "Уровень"
+      questions: "Кол-во вопросов"
+    test:
+      start: "Начать"
+
+  test_passages:
+    result:
+      header: "Тест завершен!"
+      test: "Тест"
+      success: "успешно пройден!"
+      unsuccess: "тест неуспешен"
+      back: "Назад к Тестам"
+    show:
+      header: "Прохождение"
+      question: "Вопрос"
+      from: "из"
+      category: "Категория"
+      level: "Уровень"
+      next: "Далее"
+
+  admin:
+    nav:
+      header: "панель администратора"
+      welcome: "Приветствую"
+      logout: 'Выйти'
+      apanel: "Админ панель /"
+    base:
+      admin_require:
+        norights: "У вас недостаточно прав."
+    tests:
+      create:
+        success: "Тест успешно создан."
+        not_success: "Тест sне сохранен!"
+      show:
+        title: "Тест"
+        edit: "Изменить"
+        question: "Вопрос"
+        answers: "Ответов"
+        actions: "Действия"
+        new_question: "Новый вопрос >"
+      index:
+        header: "Список тестов"
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+        author: "Автор"
+        questions: "Кол-во вопросов"
+        actions: "Действия"
+        create: "Создать новый Тест"
+      edit:
+        header: "Редактирование теста: %{title}"
+      new:
+        header: "Создание нового Теста"
+      test:
+        show: "Показать"
+        edit: "Изменить"
+        delete: "Удалить"
+      form:
+        back: "Назад"
+        create: "Создать тест"
+        update: "Обновить тест"
+    questions:
+      new:
+        title: "Создание вопроса"
+      create:
+        success: "Вопрос успешно создан"
+        not_success: "Вопрос не сохранен!"
+      edit:
+        header: "Редактирование вопроса: %{title}"
+      update:
+        success: "Вопрос успешно обновлен"
+      destroy:
+        success: "Вопрос успешно удален"
+      show:
+        title: "Тест"
+        answers: "Ответы"
+        question: "Вопрос"
+        new_answer: 'Новый ответ >'
+        answer: "Ответ"
+        correctly: "Верный?"
+        action: "Действия"
+        back: "< Назад к тесту"
+      question:
+        edit: "Изменить"
+        delete: "Удалить"
+        show_answers: "Показать ответы"
+      form:
+        back: "< Назад к Тесту"
+        create: "Создать новый"
+        edit: "Изменить"
+        question: "вопрос"
+    answers:
+      create:
+        success: "Ответ успешно создан"
+        not_success: "Ответ не сохранен!"
+      update:
+        success: "Ответ успешно обновлен"
+      destroy:
+        success: "Ответ успешно удален"
+      new:
+        create_new: "Новый ответ"
+      edit:
+        edit_header: "Изменение ответа"
+      show:
+        question: 'Вопрос'
+        edit: "Изменить ответ >"
+        answer: "Вопрос"
+        correct: "Верный"
+      answer:
+        show: "Показать"
+        edit: "Изменить"
+        delete: "Удалить"
+      back_button:
+        back: "Назад к вопросу"
+  pages:
+    index:
+      create: "Создать новый Тест >"
+      view: "< Отобразить список тестов"
+      title: "Программа для тестирования знаний"
+      benefits: "Преимущества:"
+      goal: "Цель проекта - создание приложение для составления тестов, проведение тестирования и оценки знаний."
+      perfomed: "Выполняется в рамках учебного курса"
+      description: "Краткое описание"
+      flex: "Гибкое составление тестов"
+      level: "Уровни сложности в заданиях"
+      auto: "Автоматизированная проверка"
+      group: "Групповые политики доступа"
+      choose: "Выберите тест для прохождения"
+
+  test_mailer:
+    completed_test:
+      subject: "Вы прошли TestGuru."

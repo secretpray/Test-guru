@@ -1,0 +1,10 @@
+<div class="nav nav-admin">
+  <div class="nav-admin user">
+    <div class="nav-admin langr <%= " active" if I18n.locale == :ru %>">
+      <%= link_to 'Рус', { lang: :ru } %>
+    </div>
+    <div class="nav-admin lang<%= " active" if I18n.locale == :en %>">
+      <%= link_to 'Eng ', { lang: :en } %>
+    </div>
+  </div>
+</div>

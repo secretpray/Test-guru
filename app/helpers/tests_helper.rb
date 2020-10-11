@@ -7,7 +7,7 @@ module TestsHelper
   end
 
   def test_header(test)
-    action = test.new_record? ? 'Create new' : 'Edit'
-    "#{action} test: #{test.title}"
+    action = test.new_record? ? t('.create') : t('.update')
+    "#{action}:"
   end
 end
