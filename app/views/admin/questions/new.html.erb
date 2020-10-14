@@ -1,2 +1,15 @@
-<h1><%= t('.title') %></h1>
-<%= render 'form', question: @question, test: @test %>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
+    <div class="card border-secondary mb-3 mt-5" style="max-width: 24rem;">
+      <div class="card-header text-center"><%= t('.title') %></div>
+      <div class="card-body text-secondary">
+        <div class="card-text">
+          <%= render 'form', question: @question, test: @test %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

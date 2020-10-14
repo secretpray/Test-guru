@@ -1,15 +1,19 @@
 <tr>
-  <td><%= link_to test.title, admin_test_path(test) %></td>
+  <th><%= test.title %></td>
   <td style="text-align: left"><%= test_level(test) %></td>
   <td><%= test.category.title %>
   <td><%= test.author.login %></td>
   <td style="text-align: center"><%= test.questions.count %></td>
-  <td><%= link_to t('.show'), admin_test_path(test) %></td>
-  <td><%= link_to t('.edit'), edit_admin_test_path(test) %></td>
-  <td>
-    <%= link_to t('.delete'),
-    admin_test_path(test),
-    method: :delete,
-    data: { confirm: 'Are you sure?'} %>
+  <td><%= link_to admin_test_path(test) do %>
+        <i class="fa fa-table" aria-hidden="true"></i>
+      <% end %>
+  </td>
+  <td><%= link_to edit_admin_test_path(test) do %>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <% end %>
+  </td>
+  <td> <%= link_to admin_test_path(test), method: :delete, data: { confirm: 'Are you sure?'} do %>
+      <i class="fa fa-trash-o" aria-hidden="true"></i>
+      <% end %>
   </td>
 </tr>

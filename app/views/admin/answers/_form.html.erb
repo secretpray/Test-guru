@@ -1,17 +1,19 @@
+
 <%= form_with(model: [:admin, @question, @answer], local: true) do |form| %>
   <%= render 'shared/errors', resource: @answer %>
 
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body, id: :answer_body, rows: 7, cols: 50 %>
-  </p>
-
-  <p>
-    <%= form.label :correct %><br>
-    <%= form.check_box :correct, id: :answer_correct %>
-  </p>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group mt-3">
+    <%= form.label :body %>
+    <%= form.text_area :body, id: :answer_body, cols: 40, rows: 7, class: 'form-control' %>
   </div>
-<% end %>
+
+  <div class="form-group form-check mt-3">
+    <%= form.check_box :correct, class: 'form-check-input'%>
+    <%= form.label :correct, id: :answer_correct, class: 'form-check-label' %>
+  </div>
+
+  <button class="btn btn-outline-secondary mt-3 ml-3" type="reset" >
+        <%= link_to t('.back'), admin_question_path(@answer.question), style: "text-decoration: none; color: #6c757d;" %> </button>
+  <button class="btn btn-outline-secondary mt-3" type="submit">
+    <%= button_select(@answer) %></button>
+ <% end %>

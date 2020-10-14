@@ -1,3 +1,19 @@
-<% flash.each do |key, message| %>
-  <%= content_tag :p, message, class: "flash #{key}" %>
-<% end %>
+<div class="container">
+  <% flash.each do |type, message| %>
+    <div id="custom-alert" class="alert <%= bootstrap_class_for_flash(type) %> alert-dismissible fade show mt-1" role="alert">
+      <%= message %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <% end %>
+</div>
+
+<script>
+  $(function(){
+      $('#custom-alert').alert();
+      window.setTimeout(function(){
+          $('#custom-alert').alert('close');
+      },5000);
+  });
+</script>

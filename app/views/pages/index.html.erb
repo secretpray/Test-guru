@@ -10,53 +10,35 @@
   </head>
   <body>
     <div class="container">
-      <div class="header">
-        <div class="title_center">
-          <span><%= t('.title') %></span>
+      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://picsum.photos/id/178/1200/700" class="d-block w-100 h-70" alt="...">
+            <div class="carousel-caption d-none d-md-block" style="bottom: 40%; right: 20%; left:20%;">
+              <h5 ><%= t('.title') %></h5><br>
+              <div class="container" style="max-width: 50%;">
+                <span >
+                  <%= t('.goal') %> <br><br>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="element right">
-        <div class="element-header">
-          <span><%= t('.description') %>:</span>
-        </div>
-        <div class="element-body">
-          <p>
-            <%= t('.goal') %> <br><br>
-            <%= t('.perfomed') %> <a target="_blank" class="socnet-link" href="http://www.thinknetica.com/">Thinkmetica</a>)<br>
-          </p>
-        </div>
-      </div>
-      <div class="element left">
-        <div class="element-header">
-          <span><%= t('.benefits') %></span>
-        </div>
-        <div class="element-body">
-          <ul>
-            <li><%= t('.flex') %></li>
-            <li><%= t('.level') %></li>
-            <li><%= t('.auto') %></li>
-            <li><%= t('.group') %></li>
-          </ul>
-        </div>
-        <div class="footer"></div>
-      </div>
-      <div>
-        <% if user_signed_in? %>
-          <p style="text-align: center", class="app-welcome-text"> 
+      <div class="row justify-content-center">
+        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+          <% if user_signed_in? %>
             <% if current_user.admin? %>
-              <%= link_to t('.view'), admin_tests_path %> |
-              <%= link_to t('.create'), new_admin_test_path %>
+              <button type="button" class="btn btn-outline-secondary">
+                <%= link_to t('.view'), admin_tests_path, style: "text-decoration: none; color: #6c757d;" %></button>
+              <button type="button" class="btn btn-outline-secondary">
+                <%= link_to t('.create'), new_admin_test_path, style: "text-decoration: none; color: #6c757d;" %></button>
             <% else %>
-              <%= link_to t('.choose'), tests_path %>
+              <button type="button" class="btn btn-outline-secondary btn-lg">
+                <%= link_to t('.choose'), tests_path, style: "text-decoration: none; color: #6c757d;" %></button>
             <% end %>
-          </p>
-        <% else %>
-          <p style="text-align: center", class="app-welcome-title"> Чтобы начать тестирование</p>
-          <p style="text-align: center", class="app-welcome-text">
-            <%= link_to 'зарегистрируйтесь', new_user_registration_path unless current_page?(new_user_registration_path) %> или
-            <%= link_to 'войдите', new_user_session_path unless current_page?(new_user_session_path) %> в свой аккаунт.
-          </p>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </body>

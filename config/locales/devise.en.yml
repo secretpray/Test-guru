@@ -59,6 +59,8 @@ en:
         hello: "Hello, %{user}"
         noname: "Hello, Guru!"
       new:
+        hello: "Hello, %{user}"
+        noname: "Hello, Guru!"
         title: "Enter the Guru Gates"
         submit: "Enter"
         remember_me: "Remember me"

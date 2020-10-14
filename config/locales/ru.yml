@@ -37,7 +37,7 @@ ru:
       application_description: 'Система обучвющих тестов.
                                 Позволяет пользовавателям проходить тесты.
                                 Также есть возможность моздавать тесты.'
-      project_description: 'Проект создан для для онлайн-школы "Thinknetica"'
+      project_description: 'Проект создан для для онлайн-школы '
 
   tests:
     index:
@@ -45,6 +45,7 @@ ru:
       title: "Название"
       level: "Уровень"
       questions: "Кол-во вопросов"
+      category: "Категория"
     test:
       start: "Начать"
 
@@ -68,11 +69,13 @@ ru:
       header: "панель администратора"
       welcome: "Приветствую"
       logout: 'Выйти'
-      apanel: "Админ панель /"
+      apanel: "Админ панель | TestGuru"
     base:
       admin_require:
         norights: "У вас недостаточно прав."
     tests:
+      destroy:
+        success: "Test was successfully deleted."
       create:
         success: "Тест успешно создан."
         not_success: "Тест sне сохранен!"
@@ -82,7 +85,7 @@ ru:
         question: "Вопрос"
         answers: "Ответов"
         actions: "Действия"
-        new_question: "Новый вопрос >"
+        new_question: "Новый вопрос"
       index:
         header: "Список тестов"
         title: "Название"
@@ -91,7 +94,7 @@ ru:
         author: "Автор"
         questions: "Кол-во вопросов"
         actions: "Действия"
-        create: "Создать новый Тест"
+        create: "Новый тест"
       edit:
         header: "Редактирование теста: %{title}"
       new:
@@ -120,17 +123,17 @@ ru:
         title: "Тест"
         answers: "Ответы"
         question: "Вопрос"
-        new_answer: 'Новый ответ >'
+        new_answer: 'Новый ответ'
         answer: "Ответ"
         correctly: "Верный?"
         action: "Действия"
-        back: "< Назад к тесту"
+        back: "Назад к тесту"
       question:
         edit: "Изменить"
         delete: "Удалить"
         show_answers: "Показать ответы"
       form:
-        back: "< Назад к Тесту"
+        back: "Назад к Тесту"
         create: "Создать новый"
         edit: "Изменить"
         question: "вопрос"
@@ -148,9 +151,10 @@ ru:
         edit_header: "Изменение ответа"
       show:
         question: 'Вопрос'
-        edit: "Изменить ответ >"
-        answer: "Вопрос"
+        edit: "Изменить ответ"
+        answer: "Ответ"
         correct: "Верный"
+        back: "Назад к вопросу"
       answer:
         show: "Показать"
         edit: "Изменить"
@@ -159,8 +163,8 @@ ru:
         back: "Назад к вопросу"
   pages:
     index:
-      create: "Создать новый Тест >"
-      view: "< Отобразить список тестов"
+      create: "Новый тест"
+      view: "Список тестов"
       title: "Программа для тестирования знаний"
       benefits: "Преимущества:"
       goal: "Цель проекта - создание приложение для составления тестов, проведение тестирования и оценки знаний."
@@ -170,7 +174,7 @@ ru:
       level: "Уровни сложности в заданиях"
       auto: "Автоматизированная проверка"
       group: "Групповые политики доступа"
-      choose: "Выберите тест для прохождения"
+      choose: "НАЧАТЬ"
 
   test_mailer:
     completed_test:

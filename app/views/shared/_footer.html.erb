@@ -1,14 +1,8 @@
-<footer class="site-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-sm-6 col-xs-12">
-        <p class="copyright-text">
-          TestGuru v<%= TestGuru::VERSION%>. Copyright <%=current_year%> &copy; <%= TestGuru::AUTHOR %>
-          (<%= github_url(TestGuru::NAME, TestGuru::GITHUB_AUTHOR, TestGuru::GITHUB_REPO) %>)
-          <%= t('.project_description') %>
-          <%= link_to 'Thinknetica', TestGuru::PROJECT_LINK, target: :blank %>
-        </p>
-        </div>
-    </div>
+<footer class="page-footer font-small bg-light font-weight-lighter" style="position: fixed; bottom: 0; width: 100%;">
+  <div class="footer-copyright text-center py-3">
+    TestGuru v<%= TestGuru::VERSION%>. Copyright <%=current_year%> &copy; <%= TestGuru::AUTHOR %>
+    (<i class="fa fa-code-fork" aria-hidden="true"><%= github_url(TestGuru::NAME, TestGuru::GITHUB_AUTHOR, TestGuru::GITHUB_REPO) %>)</i>
+    <%= t('.project_description') %>
+    <%= link_to 'Thinknetica', TestGuru::PROJECT_LINK, target: :blank %>
   </div>
 </footer>

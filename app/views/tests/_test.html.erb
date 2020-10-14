@@ -1,8 +1,7 @@
 <tr>
-  <td><%= link_to test.title, admin_test_path(test) %></td>
+  <td><%= test.title %></td>
   <td style="text-align: left"><%= test_level(test) %></td>
   <td><%= test.category.title %>
-  <td><%= test.author.login %></td>
   <td style="text-align: center"><%= test.questions.count %></td>
-  <td><%= button_to t('.start'), start_test_path(test) %></td>
+  <td><%= button_to t('.start'), start_test_path(test), class:"btn btn-warning ml-1" %></td>
 </tr>

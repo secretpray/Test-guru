@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Admin | TestGuru</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,8 +13,20 @@
 
   <body>
     <%= render 'admin/nav' %>
-    <%= render 'shared/flash' %>
+    
+    <div class="container">
+      <div class="container-lg">
+        <div class="row justify-content-center mt-3">
+          <div class='col-12'>
 
-    <%= yield %>
+            <%= render 'shared/flash', flash: flash %>
+
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <%= render 'shared/footer' %>
   </body>
 </html>

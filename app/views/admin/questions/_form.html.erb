@@ -1,12 +1,13 @@
 <%= form_with(model: [:admin, @test, @question], local: true) do |form| %>
   <%= render 'shared/errors', resource: @question %>
 
-  <p>
+  <div class="form-group mt-3">
     <%= form.label :question, id: :body %> <br>
-    <%= form.text_area :body, id: :question_body, cols: 40, rows: 4 %>
-  </p>
+    <%= form.text_area :body, id: :question_body, cols: 40, rows: 4, class: 'form-control' %>
+  </div>
 
-  <p><%= form.submit %></p>
+  <button class="btn btn-outline-secondary mt-3 ml-4" type="reset" >
+        <%= link_to t('.back'), admin_test_path(@question.test), style: "text-decoration: none; color: #6c757d;" %> </button>
+  <button class="btn btn-outline-secondary mt-3" type="submit">
+    <%= button_select(@question) %></button>
 <% end %>
-
-<%= link_to t('.back'), admin_test_path(@question.test) %>
