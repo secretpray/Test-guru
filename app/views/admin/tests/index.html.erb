@@ -1,19 +1,25 @@
-<h1><%= t('.header') %></h1>
-
-<p>
-<%= link_to t('.create'), new_admin_test_path %>
-</p>
-<br>
-<table>
-  <tr>
-    <th><%= t('.title') %></th>
-    <th><%=t('.level') %></th>
-    <th><%=t('.category') %></th>
-    <th><%=t('.author') %></th>
-    <th><%=t('.questions') %></th>
-    <th colspan="4"><%= t('.actions') %></th>
-  </tr>
-
-  <%= render @tests %>
-</table>
-<br><br>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-8">
+    <div class="container">
+      <div class= "float-center offset-1">
+      <h1 class="mt-5 mb-4 text-center"><%= t('.header') %></h1>
+        <table class="table">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col"><%= t('.title') %></th>
+              <th scope="col"><%= t('.level') %></th>
+              <th scope="col"><%= t('.category') %></th>
+              <th scope="col"><%= t('.author') %></th>
+              <th scope="col" style="text-align: center"><%= t('.questions') %></th>
+              <th scope="col" colspan="4" style="text-align: center"><%= t('.actions') %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @tests %>
+          </tbody>
+        </table>
+      <button type="button" class="btn btn-light mt-3"> <%= link_to t('.create'), new_admin_test_path, style: "text-decoration: none; color: #6c757d;" %></button>
+      </div>
+    </div>
+  </div>
+</div>

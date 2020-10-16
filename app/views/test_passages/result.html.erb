@@ -1,13 +1,16 @@
-<p>
-	<% if @test_passage.success? %>
-		<strong class="test_passed_successfully"> 
-			<h1><%= t('.test') %> "<%= @test_passage.test.title %>" <%= t('.success') %>: (<%= @test_passage.success_percent %>%)</h1>
-		</strong>
-	<% else %>
-		<strong class="test_passed_unsuccessfully">
-			<h1><%= t('.test') %> "<%= @test_passage.test.title %>" <%= t('.unsuccess') %>: (<%= @test_passage.success_percent %>%)</h1>
-		</strong>
-	<% end %>
-</p>
- 
-<%= render 'shared/back_button', caption: t('.back'), path:  tests_path %> 
+<div class="row justify-content-center mt-5">
+  <div class="col col-md-6 mt-5">
+		<% if @test_passage.success? %>
+			<strong style="color: green;"> 
+				<h2><%= t('.test') %> "<%= @test_passage.test.title %>" <%= t('.success') %> (<%= @test_passage.success_percent %>%)</h2>
+			</strong>
+		<% else %>
+			<strong style="color: red;">
+				<h2><%= t('.test') %> "<%= @test_passage.test.title %>" <%= t('.unsuccess') %> (<%= @test_passage.success_percent %>%)</h2>
+			</strong>
+		<% end %>
+			<button class="btn btn-outline-secondary mt-3 ml-1" type="reset" >
+      	<%= link_to t('.back'), tests_path, style: "text-decoration: none; color: #6c757d;" %>
+    	</button>
+	</div>
+</div>

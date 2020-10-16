@@ -1,19 +1,19 @@
-<h1><%= t('.question') %></h1>
-
-<p>
-  <%= @answer.question.body %>
-</p>
-
-<%= link_to t('.edit'), edit_admin_answer_path(@answer) %>
-<p>
-  <b><%= t('.answer') %>:</b>
-  <%= @answer.body %>
-</p>
-
-<p>
-  <b><%= t('.correct') %>:</b>
-  <%= @answer.correct %>
-</p>
-
-
-<%= render 'back_button' %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col col-lg-8 offset-4 mt-5">
+      <div class="card" style="width: 24rem;">
+        <div class="card-header">
+          <h5 class=""> <%= @answer.question.body %></h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item font-weight-bold"><%= t('.answer') %>: <%= @answer.body %></li>
+          <li class="list-group-item font-weight-bold"><%= t('.correct') %>: <%= @answer.correct %></li>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-light mt-4 mb-3 ml-5">
+        <%= link_to t('.back'), admin_question_path(@answer.question), style: "text-decoration: none; color: #6c757d;" %></button>
+      <button type="button" class="btn btn-light mt-4 mb-3">
+        <%= link_to t('.edit'), edit_admin_answer_path(@answer), style: "text-decoration: none; color: #6c757d;" %> </button>
+    </div>
+  </div>
+</div>

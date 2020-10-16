@@ -34,7 +34,7 @@ en:
       application_description: 'The education tests system:
                                 Allows users to pass tests.
                                 Users can also create their own tests.'
-      project_description: 'Project created at the school "Thinknetica"'
+      project_description: 'Project created at the school '
 
   tests:
     index:
@@ -66,11 +66,13 @@ en:
       header: "admin panel"
       welcome: "Welcome"
       logout: "Logout"
-      apanel: "Admin panel /"
+      apanel: "Admin panel | TestGuru"
     base:
       admin_require:
         norights: "You are not an admin."
     tests:
+      destroy:
+        success: "Test was successfully deleted."
       create:
         success: "Test was successfully created."
         not_success: "Test was unsuccessfully created."
@@ -80,7 +82,7 @@ en:
         question: "Question"
         answers: "Q-ty answers"
         actions: "Actions"
-        new_question: "New question >"
+        new_question: "New question"
       index:
         header: "Tests list"
         title: "Title"
@@ -118,17 +120,17 @@ en:
         title: "Test"
         answers: "Answers"
         question: "Question"
-        new_answer: 'New Answer >'
+        new_answer: 'New Answer'
         answer: "Answer"
         correctly: "Correct?"
         action: "Action"
-        back: "< Back to test"
+        back: "Back to test"
       question:
         edit: "Edit"
         delete: "Delete"
         show_answers: "Show answers"
       form:
-        back: "< Back to Test"
+        back: "Back to Test"
         create: "Create new"
         edit: "Edit"
         question: "question"
@@ -146,9 +148,10 @@ en:
         edit_header: "Edit answer"
       show:
         question: 'Question'
-        edit: "Edit answer >"
+        edit: "Edit answer"
         answer: "Answer"
         correct: "Correct"
+        back: "Back to Question"
       answer:
         show: "Show"
         edit: "Edit"
@@ -157,9 +160,9 @@ en:
         back: "Back to Question"
   pages:
     index:
-      create: "Create new Test >"
-      view: "< View tetst list"
-      title: "Tricky Testing Program"
+      create: "New Test"
+      view: "Tetst list"
+      title: "Online Tricky Testing Program"
       benefits: "Benefits:"
       goal: "The goal of the project is to create an application for writing tests, testing and assessing knowledge."
       perfomed: "Performed as part of the training course"
@@ -168,7 +171,7 @@ en:
       level: "Difficulty levels in tasks"
       auto: "Automated check"
       group: "Group access policies"
-      choose: "Choose a test to pass"
+      choose: "START"
 
   test_mailer:
     completed_test:
