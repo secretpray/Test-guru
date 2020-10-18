@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :set_locale
 
-  def default_url_options
-    return {} if I18n.locale == I18n.default_locale
+  add_flash_types :safe_notice # только для отображения ссылок во flash (при желании можно все поменять под классы Bootstrap)
 
-    { lang: I18n.locale } # { lang: ((I18n.locale == I18n.default_locale) ? nil : I18n.locale) }
+  def default_url_options
+    { lang: ((I18n.locale == I18n.default_locale) ? nil : I18n.locale) }
   end
 
   protected
