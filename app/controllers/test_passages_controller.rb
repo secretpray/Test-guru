@@ -17,7 +17,7 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    service = GistQuestionService.new(@test_passage.current_question, client: Octokit::Client )
+    service = GistQuestionService.new(@test_passage.current_question)
     result = service.call
 
     flash_options = create_gist!(service, result)
