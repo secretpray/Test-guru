@@ -36,6 +36,8 @@ en:
                                 Users can also create their own tests.'
       project_description: 'Project created at the school '
 
+
+
   tests:
     index:
       header: "Tests list"
@@ -52,7 +54,9 @@ en:
       success: "passed successfully!"
       unsuccess: "passed unsuccessfully"
       back: "Back to Tests"
-
+    gist:
+      success: "Gist was successfully created! <a href='%{gist_url}' target='_blank'>Link</a>"
+      failure: "An error occurred while saving gist"
     show:
       header: "Passing the"
       question: "Question"
@@ -60,8 +64,19 @@ en:
       category: "Category"
       level: "Level"
       next: "Next"
+      gist_question: "Create Gist"
+  services:
+    gist_question_service:
+      gist_decsription: "Question from test: %{test}"
 
   admin:
+    gists:
+      index:
+        gist_list: "Gists list"
+        gist_user: "User"
+        gist_question: "Question"
+        gist_link: "Gist link"
+        gist_action: "Action"
     nav:
       header: "admin panel"
       welcome: "Welcome"
@@ -92,6 +107,7 @@ en:
         questions: "Questions"
         actions: "Actions"
         create: "New test"
+        gist: "Gists list"
       new:
         header: "Create new Test"
       edit:
@@ -161,7 +177,8 @@ en:
   pages:
     index:
       create: "New Test"
-      view: "Tetst list"
+      view: "Tests list"
+      gist: "Gists list"
       title: "Online Tricky Testing Program"
       benefits: "Benefits:"
       goal: "The goal of the project is to create an application for writing tests, testing and assessing knowledge."

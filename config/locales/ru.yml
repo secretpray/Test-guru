@@ -56,6 +56,9 @@ ru:
       success: "успешно пройден!"
       unsuccess: "тест неуспешен"
       back: "Назад к Тестам"
+    gist:
+      success: "Gist успешно сохранён! <a href='%{gist_url}' target='_blank'>Ссылка</a>"
+      failure: "Во время сохранения gist произошла ошибка"
     show:
       header: "Прохождение"
       question: "Вопрос"
@@ -63,8 +66,19 @@ ru:
       category: "Категория"
       level: "Уровень"
       next: "Далее"
+      gist_question: "Создать Gist"
+  services:
+    gist_question_service:
+      gist_decsription: "Вопрос по тесту: %{test}"
 
   admin:
+    gists:
+      index:
+        gist_list: "Список Gists"
+        gist_user: "Пользователь"
+        gist_question: "Вопрос"
+        gist_link: "Gist ссылка"
+        gist_action: "Действия"
     nav:
       header: "панель администратора"
       welcome: "Приветствую"
@@ -95,6 +109,7 @@ ru:
         questions: "Кол-во вопросов"
         actions: "Действия"
         create: "Новый тест"
+        gist: "Список gist"
       edit:
         header: "Редактирование теста: %{title}"
       new:
@@ -163,8 +178,9 @@ ru:
         back: "Назад к вопросу"
   pages:
     index:
-      create: "Новый тест"
+      create: "Создать тест"
       view: "Список тестов"
+      gist: "Список gist"
       title: "Программа для тестирования знаний"
       benefits: "Преимущества:"
       goal: "Цель проекта - создание приложение для составления тестов, проведение тестирования и оценки знаний."

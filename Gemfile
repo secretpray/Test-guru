@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
 gem 'sqlite3', '~> 1.4'
 gem 'puma', '~> 4.1'
@@ -25,6 +26,12 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 5.0.0.alpha1'
 gem "font-awesome-rails"
 
+# NETWORKING
+
+gem 'faraday'
+
+# Officical Github Gist gem
+gem "octokit", "~> 4.0"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -10,7 +10,7 @@ USERS = [
 ]
 
 USERS.each do |user|
-  db_users = User.find_or_create_by(user)
+  User.find_or_create_by(user)
 end
 
 User.update_all confirmed_at: DateTime.now

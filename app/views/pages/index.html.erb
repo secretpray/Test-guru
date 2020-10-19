@@ -13,31 +13,36 @@
       <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="https://picsum.photos/id/178/1200/700" class="d-block w-100 h-70" alt="...">
+            <img src="https://picsum.photos/id/178/1200/700" class="d-block w-100 h-70" alt="Main" style="opacity: 0.6;">
             <div class="carousel-caption d-none d-md-block" style="bottom: 40%; right: 20%; left:20%;">
               <h5 ><%= t('.title') %></h5><br>
-              <div class="container" style="max-width: 50%;">
+              <div class="container" style="max-width: 60%;">
                 <span >
                   <%= t('.goal') %> <br><br>
                 </span>
+                <div class="row justify-content-center">
+                  <div class="btn-group mt-3" role="group" aria-label="Basic example">
+                    <% if user_signed_in? %>
+                      <% if current_user.admin? %>
+                        <button type="button" class="btn btn-info mr-1">
+                          <%= link_to t('.gist'), admin_gists_path, style: "text-decoration: none; color: #fff;" %>
+                        </button>
+                        <button type="button" class="btn btn-primary mr-1">
+                          <%= link_to t('.view'), admin_tests_path, style: "text-decoration: none; color: #fff;" %>
+                        </button>
+                        <button type="button" class="btn btn-warning">
+                          <%= link_to t('.create'), new_admin_test_path, style: "text-decoration: none; color: #fff;" %>
+                        </button>
+                      <% else %>
+                        <button type="button" class="btn btn-primary">
+                          <%= link_to t('.choose'), tests_path, style: "text-decoration: none; color: #fff;" %></button>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
-          <% if user_signed_in? %>
-            <% if current_user.admin? %>
-              <button type="button" class="btn btn-outline-secondary">
-                <%= link_to t('.view'), admin_tests_path, style: "text-decoration: none; color: #6c757d;" %></button>
-              <button type="button" class="btn btn-outline-secondary">
-                <%= link_to t('.create'), new_admin_test_path, style: "text-decoration: none; color: #6c757d;" %></button>
-            <% else %>
-              <button type="button" class="btn btn-outline-secondary btn-lg">
-                <%= link_to t('.choose'), tests_path, style: "text-decoration: none; color: #6c757d;" %></button>
-            <% end %>
-          <% end %>
         </div>
       </div>
     </div>
