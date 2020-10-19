@@ -72,6 +72,13 @@ ru:
       gist_decsription: "Вопрос по тесту: %{test}"
 
   admin:
+    gists:
+      index:
+        gist_list: "Список Gists"
+        gist_user: "Пользователь"
+        gist_question: "Вопрос"
+        gist_link: "Gist ссылка"
+        gist_action: "Действия"
     nav:
       header: "панель администратора"
       welcome: "Приветствую"

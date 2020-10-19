@@ -24,12 +24,12 @@
           <%= link_to 'Рус', { lang: :ru }, class: "mr-1 ml-1 font-weight-light btn btn-outline-secondary#{I18n.locale == :ru ? ' disabled' : nil }"%>
           
         <% if user_signed_in? %>
-          <span class="ml-5 mr-2 font-weight-light"><%= t('.welcome') %><b class="ml-2"><%= current_user.email %></b> Guru</span>
-          <%= link_to destroy_user_session_path, method: :delete, class: "ml-2 mr-2 btn-outline-secondary" do %>
+          <span class="ml-3 mr-2 mt-1 font-weight-light"><%= t('.welcome') %><b class="ml-2"><%= current_user.email %></b> Guru</span>
+          <%= link_to destroy_user_session_path, method: :delete, class: "ml-2 btn btn-outline-secondary" do %>
             <i class="fa fa-sign-out" aria-hidden="true"><%= t('.logout') %></i>
           <% end %>
         <% else %>
-          <%= link_to "Log in", new_session_path(resource_name), class: "ml-1 mr-1 btn btn-outline-info" %>
+          <%= link_to "Log in", new_session_path(resource_name), class: "ml-5 mr-1 btn btn-outline-info" %>
           <%= link_to "Sign up", new_registration_path(resource_name), class: "ml-1 mr-1 btn btn-outline-info" %>
         <% end %>
       </span>

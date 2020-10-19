@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
-OCTOKIT = Octokit::Client.new(:access_token => ENV['ACCESS_TOKEN'])
-
 class TestPassagesController < ApplicationController
+
   before_action :set_test_passage, only: %i[show result update gist]
 
   def show; end
@@ -20,23 +17,29 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage.current_question, client: OCTOKIT).call
+    service = GistQuestionService.new(@test_passage.current_question, client: Octokit::Client )
+    result = service.call
 
-    flash_options =
-      if result.html_url.present?
-        current_user.gists.create!(question: @test_passage.current_question, gist_url: result.html_url)
-
-        { :safe_notice => t('.success', gist_url: result.html_url) } # custom flash (for safe link only)
-      else
-        { alert: t('.failure') }
-      end
+    flash_options = create_gist!(service, result)
 
     redirect_to @test_passage, flash_options
   end
 
   private
 
+  def create_gist!(service, result)
+    if service.success?
+      gist_url = result.html_url
+
+      current_user.gists.create(question: @test_passage.current_question, gist_url: gist_url)
+      { safe_notice: t('.success', gist_url: gist_url) }
+    else
+      { alert: t('.failure') }
+    end
+  end
+
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
   end
 end
+

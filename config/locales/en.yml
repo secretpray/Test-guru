@@ -70,6 +70,13 @@ en:
       gist_decsription: "Question from test: %{test}"
 
   admin:
+    gists:
+      index:
+        gist_list: "Gists list"
+        gist_user: "User"
+        gist_question: "Question"
+        gist_link: "Gist link"
+        gist_action: "Action"
     nav:
       header: "admin panel"
       welcome: "Welcome"
