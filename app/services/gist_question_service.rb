@@ -1,12 +1,11 @@
 class GistQuestionService
 
   STATUS_SUCCESS = [200, 201]
-  ACCESS_TOKEN   = ENV['ACCESS_TOKEN']
 
   def initialize(question, client: nil)
     @question = question
     @test = question.test
-    @client = client.new(access_token: ACCESS_TOKEN) || GitHubClient.new
+    @client = client.new(access_token: ENV['ACCESS_TOKEN']) || GitHubClient.new
   end
 
   def call
