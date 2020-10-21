@@ -13,6 +13,15 @@ document.addEventListener('turbolinks:load', function() {
     let passwordConfirmField = document.querySelector('.password_confirm')
     let passwordField = document.querySelector('.password')
 
+    if (newPassword.value == "" || confirmPassword.value == "") {
+      newPassword.style.backgroundColor  = "transparent"
+      confirmPassword.style.backgroundColor = "transparent"
+      passwordField.querySelector('.octicon-check').classList.add('hide')
+      passwordConfirmField.querySelector('.octicon-check').classList.add('hide')
+      $("#submitBtn").attr("disabled",true);
+      return
+    }
+
     if (newPassword.value == confirmPassword.value && newPassword.value != "" ) {
       newPassword.style.backgroundColor  = "#DFEFCA"
       confirmPassword.style.backgroundColor  = "#DFEFCA"
@@ -20,12 +29,6 @@ document.addEventListener('turbolinks:load', function() {
       passwordConfirmField.querySelector('.octicon-check').classList.remove('hide')
       passwordConfirmField.querySelector('.password-alert').classList.add('hide')
       $("#submitBtn").attr("disabled",false);
-    } else if (newPassword.value == "" || confirmPassword.value == "") {
-      newPassword.style.backgroundColor  = "transparent"
-      confirmPassword.style.backgroundColor = "transparent"
-      passwordField.querySelector('.octicon-check').classList.add('hide')
-      passwordConfirmField.querySelector('.octicon-check').classList.add('hide')
-      $("#submitBtn").attr("disabled",true);
     } else {
       newPassword.style.backgroundColor  = "#ffe7e7"
       confirmPassword.style.backgroundColor = "#ffe7e7"
