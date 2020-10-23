@@ -24,7 +24,8 @@ gem 'devise', '~> 4.0'
 # UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.0.0.alpha1'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+gem 'octicons_helper'
 
 # NETWORKING
 

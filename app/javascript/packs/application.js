@@ -9,6 +9,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("jquery")
+require("utilities/check_password")
+require("utilities/sorting")
 
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
@@ -17,3 +19,4 @@ import 'bootstrap'
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
+
