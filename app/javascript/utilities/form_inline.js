@@ -23,9 +23,10 @@ function formInlineLinkHandler(event) {
 }
 
 function formInlineHandler(testId) {
-  let link = document.querySelector('.form-inline-link[data-test-id="' + testId + '"]')
-  let testTitle = document.querySelector('.test-title[data-test-id="' + testId + '"]')
-  let formInline = document.querySelector('.form-inline[data-test-id="' + testId + '"]')
+  let testDataAttr = `[data-test-id="${testId}"]`;
+  let link = document.querySelector('.form-inline-link' + testDataAttr)
+  let testTitle = document.querySelector('.test-title' + testDataAttr)
+  let formInline = document.querySelector('.form-inline' + testDataAttr)
   
   if (formInline) {
     if (formInline.classList.contains('hide')) {

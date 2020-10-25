@@ -13,6 +13,7 @@ require("utilities/check_password")
 require("utilities/form_inline")
 require("utilities/sorting")
 require("utilities/progress_bar")
+require("utilities/auto_hide_flash")
 
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'

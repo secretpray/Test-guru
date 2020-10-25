@@ -31,7 +31,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to [:admin, @test], notice: t('.success')
+      redirect_to [:admin, @test], notice: t('.success') # admin_tests_path
     else
       render :edit
     end
@@ -65,6 +65,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def rescue_with_test_not_found
-    render plain: 'Test was not found'
+    render inline: '<h1>Test not found [404]</h1>', status: 404
   end
 end
