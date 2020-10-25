@@ -1,0 +1,17 @@
+<div class="container_diagramm mt-5">
+  <div class="card_diagramm">
+    <div class="box_diagramm">
+      <div class="percent_diagramm">
+        <svg> 
+          <circle cx="70" cy="70" r="70"></circle>
+          <% percent = progress_percent(@test_passage.current_question_index, @test_passage.questions_count) %>
+          <circle cx="70" cy="70" r="70" style='stroke-dashoffset: calc(440 - (440 * <%= percent %>) / 100);'></circle>
+        </svg>
+        <div class="number_diagramm">
+          <h2><%= percent %><span class="percent-only">%</span></h2>
+        </div>
+      </div>
+      <h2 class="text_diagramm">Html</h2>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,14 @@ class TestPassage < ApplicationRecord
     save!
   end
 
+  def questions_count
+    test.questions.count
+  end
+
+  def current_question_index
+    test.questions.index(current_question) + 1 unless completed?
+  end
+
   def completed?
     current_question.nil?
   end

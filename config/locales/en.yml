@@ -1,4 +1,7 @@
 en:
+  forms:
+    cancel: "Cancel"
+    edit: "Edit"
   helpers:
     :true: 'Yes'
     :false: 'No'
@@ -88,6 +91,12 @@ en:
     tests:
       destroy:
         success: "Test was successfully deleted."
+      update:
+        success: "Test was successfully updated."
+      update_inline:
+        success: "Name test was successfully updated."
+      form_inline:
+        submit: "Ok"
       create:
         success: "Test was successfully created."
         not_success: "Test was unsuccessfully created."
@@ -114,6 +123,7 @@ en:
         header: "Edit test: %{title}"
       test:
         show: "Show"
+        editor: "Edit"
         edit: "Edit"
         delete: "Delete"
       form:

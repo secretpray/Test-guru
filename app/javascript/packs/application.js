@@ -10,11 +10,16 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery")
 require("utilities/check_password")
+require("utilities/form_inline")
 require("utilities/sorting")
+require("utilities/progress_bar")
 
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 import 'bootstrap'
+
+// This is a must
+//= require i18n/translations
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
