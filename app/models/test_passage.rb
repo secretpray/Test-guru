@@ -18,7 +18,7 @@ class TestPassage < ApplicationRecord
   end
 
   def current_question_index
-    test.questions.index(current_question) + 1 unless completed?
+    test.questions.index(current_question) unless completed?
   end
 
   def completed?
@@ -35,6 +35,10 @@ class TestPassage < ApplicationRecord
 
   def current_question_number
     test.questions.where('id <= :id', id: current_question.id).count
+  end
+
+  def progress_percent
+    ((current_question_index.to_f / questions_count.to_f) * 100).to_i
   end
 
   private

@@ -27,15 +27,15 @@ function formInlineHandler(testId) {
   let link = document.querySelector('.form-inline-link' + testDataAttr)
   let testTitle = document.querySelector('.test-title' + testDataAttr)
   let formInline = document.querySelector('.form-inline' + testDataAttr)
-  
+ 
 
   if (formInline.classList.contains('hide')) {
     testTitle.classList.add('hide')
     formInline.classList.remove('hide')
-    link.textContent = link.dataset.cancelLabel;
+    link.textContent = link.dataset.cancelLabel
   } else {
     testTitle.classList.remove('hide')
     formInline.classList.add('hide')
-    link.textContent = link.dataset.editLabel;
+    link.textContent = link.dataset.editLabel
   }
 }

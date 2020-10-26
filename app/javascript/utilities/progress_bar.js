@@ -5,7 +5,7 @@ document.addEventListener('turbolinks:load', function() {
     const currentQuestionIndex = progressBar.dataset.currentQuestionIndex
     const questionsCount = progressBar.dataset.questionsCount
 
-    const percentage = (((currentQuestionIndex - 1) / questionsCount) * 100) + '%'
+    const percentage = ((currentQuestionIndex / questionsCount) * 100) + '%'
 
     progressBar.style.width = percentage;
     progressBar.textContent = percentage;
@@ -20,7 +20,7 @@ document.addEventListener('turbolinks:load', function() {
     const circle = diagramm.querySelector('.percent_circle')
     let currentQuestionIndex = diagramm.dataset.currentQuestionIndex
     let questionsCount = diagramm.dataset.questionsCount
-    let percentage = Math.floor(((currentQuestionIndex - 1) / questionsCount) * 100)
+    let percentage = Math.floor((currentQuestionIndex / questionsCount) * 100)
     texts.forEach(node => (node.textContent = percentage));
 
     const circlePart = 440 - (440 * percentage) / 100;

@@ -10,7 +10,4 @@ module TestPassagesHelper
     end
   end
 
-  def progress_percent(current_question_index, questions_count)
-    (((current_question_index - 1).to_f / questions_count.to_f) * 100).to_i
-  end
 end
