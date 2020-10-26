@@ -1,4 +1,7 @@
 ru:
+  forms:
+    cancel: "Отмена"
+    edit: "Изменить"
   helpers:
     :true: 'Да'
     :false: 'Нет'
@@ -89,10 +92,16 @@ ru:
         norights: "У вас недостаточно прав."
     tests:
       destroy:
-        success: "Test was successfully deleted."
+        success: "Тест успешно удален."
+      update:
+        success: "Тест успешно обновлен."
+      update_inline:
+        success: "Имя теста обновлено."
+      form_inline:
+        submit: "Ok"
       create:
         success: "Тест успешно создан."
-        not_success: "Тест sне сохранен!"
+        not_success: "Тест не сохранен!"
       show:
         title: "Тест"
         edit: "Изменить"
@@ -116,6 +125,7 @@ ru:
         header: "Создание нового Теста"
       test:
         show: "Показать"
+        editor: "Изменить"
         edit: "Изменить"
         delete: "Удалить"
       form:

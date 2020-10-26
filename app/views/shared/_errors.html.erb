@@ -1,7 +1,10 @@
-<% if resource.errors.present? %>
-    <div>
-     <h2><%= t('.header', count: resource.errors.count) %>:</h2>
-
+<% if resource.present? && resource.errors.present? %>
+  <%= content_tag :div, class: 'resource-errors', data: {resource_id: resource.id} do %>
+    <div class="alert <%= bootstrap_class_for_flash(:error) %> alert-dismissible fade show mt-1" role="alert">
+      <h4 class="alert-heading"><%= t('.header', count: resource.errors.count) %>:</h4>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
       <ul>
         <% resource.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -9,3 +12,4 @@
       </ul>
     </div>
   <% end %>
+<% end %>

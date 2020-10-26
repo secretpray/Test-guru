@@ -1,16 +1,18 @@
 <h1 class="text-center mt-3 mb-4" ><%= t('.header') %></h1>
 
+<%= render 'shared/errors', resource: @test %>
+
   <table class="table">
     <thead class="table-dark">
       <tr>
         <th class="sort-by-title pointer">
           <%= t('.title') %>
-          <%= octicon 'arrow-up', class: 'text-success hide' %>
-          <%= octicon 'arrow-down', class: 'text-success hide'%>
+          <%= octicon 'arrow-up', class: 'text-success hide', style: 'height: 16px !important' %>
+          <%= octicon 'arrow-down', class: 'text-success hide', style: 'height: 16px !important'%>
         </th>
-        <th scope="col"><%= t('.level') %></th>
-        <th scope="col"><%= t('.category') %></th>
-        <th scope="col"><%= t('.author') %></th>
+        <th scope="col" class="text-center"><%= t('.level') %></th>
+        <th scope="col" class="text-center"><%= t('.category') %></th>
+        <th scope="col" class="text-center"><%= t('.author') %></th>
         <th scope="col" class="text-center"><%= t('.questions') %></th>
         <th colspan="4" class="text-center"><%= t('.action') %></th>
       </tr>

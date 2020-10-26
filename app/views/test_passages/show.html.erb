@@ -1,30 +1,43 @@
-<div class="row justify-content-center mt-3">
-  <div class="col col-md-4">
-    <div class="card border-secondary mb-3 mt-5" style="max-width: 24rem;">
-      <div class="card-header text-center"><%= t('.header') %>: "<%= @test_passage.test.title %>"</div>
-        <div class="card-body text-secondary text-center">
-         (<%= t('.question') %> <%= @test_passage.current_question_number %> <%= t('.from') %> <%= @test_passage.test.questions.count %>)
-        </div>
-        <div class="card-text">
-          <div class="ml-4 mt-3 mb-3 font-weight-bold"><%= @test_passage.current_question.body %></div>
-            <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-              <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
-              <div class="form-group form-check mt-3">
-                <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-                <%= b.label %>
-              </div>
-            <% end %>
-              <div class="container">
-                <div class="row">
-                  <div class="btn-group justify-content-center" role="group" aria-label="Basic example">
-                     <div style="opacity: 0.6;"><%= link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post, class:"btn btn-dark mt-3 mb-3" %></div>
-                     <div><%= form.submit t('.next'), class: "btn btn-warning mt-3 mb-3 ml-1" %></div>
-                  </div>
-                </div>
-              </div>
-          <% end %>
-        </div>
-    </div>
-  </div>
-</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-3">
 
+        <!-- HTML/CSS progress bar -->
+        <%= render 'diagram_css' %>
+        <%= render 'diagram_js' %>
+
+    </div>
+      <div class="col-9">
+        <div class="row justify-content-center mt-4">
+              <!-- Javascript progress bar -->
+              <%= render 'progress_bar' %>
+
+          <div class="card border-secondary mb-3 " style="width: 22rem; padding-right: 0; padding-left: 0; margin-top: 12%;">
+            <div class="card-header text-center"><%= t('.header') %>: "<%= @test_passage.test.title %>"</div>
+              <div class="card-body text-secondary text-center">
+               (<%= t('.question') %> <%= @test_passage.current_question_number %> <%= t('.from') %> <%= @test_passage.test.questions.count %>)
+              </div>
+              <div class="card-text">
+                <div class="ml-4 mt-3 mb-3 font-weight-bold"><%= @test_passage.current_question.body %></div>
+                  <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+                    <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
+                    <div class="form-group form-check mt-3">
+                      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+                      <%= b.label %>
+                    </div>
+                  <% end %>
+                    <div class="container">
+                      <div class="row">
+                        <div class="btn-group justify-content-center" role="group" aria-label="Basic example">
+                           <div style="opacity: 0.6;"><%= link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post, class:"btn btn-dark mt-3 mb-3" %></div>
+                           <div><%= form.submit t('.next'), class: "btn btn-warning mt-3 mb-3 ml-1" %></div>
+                        </div>
+                      </div>
+                    </div>
+                <% end %>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

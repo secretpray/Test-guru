@@ -1,19 +1,30 @@
 <tr>
-  <th><%= test.title %></td>
-  <td style="text-align: left"><%= test_level(test) %></td>
-  <td><%= test.category.title %>
-  <td><%= test.author.login %></td>
-  <td style="text-align: center"><%= test.questions.count %></td>
-  <td><%= link_to admin_test_path(test) do %>
-        <i class="fa fa-table" aria-hidden="true"></i>
-      <% end %>
+  <td class="align-middle">
+    <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
+    <%= render 'form_inline', test: test == @test ? @test : test %>
   </td>
-  <td><%= link_to edit_admin_test_path(test) do %>
-        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-      <% end %>
+  <td class="align-middle text-center"><%= test_level(test) %></td>
+  <td class="align-middle text-center"><%= test.category.title %>
+  <td class="align-middle text-center"><%= test.author.login %></td>
+  <td class="align-middle text-center"><%= test.questions.count %></td>
+  <td class="align-middle text-center">
+    <%= link_to t('.show'), admin_test_path(test),
+                class: 'btn btn-info btn-sm',
+                style: 'background-color: #17a2b8 !important; padding: 0.5rem 0.5rem !important;' %>
   </td>
-  <td> <%= link_to admin_test_path(test), method: :delete, data: { confirm: 'Are you sure?'} do %>
-      <i class="fa fa-trash-o" aria-hidden="true"></i>
-      <% end %>
+  <td class="align-middle">
+    <%= link_to t('.edit'),
+                edit_admin_test_path(test),
+                data: { test_id: test.id, edit_label: t('forms.edit'), cancel_label: t('forms.cancel') },
+                class: 'form-inline-link btn btn-warning btn-sm',
+                style: 'background-color: #ffc106 !important; padding: 0.5rem 0.5rem !important;' %>
+  </td>
+  <td class="align-middle">
+    <%= link_to t('.delete'),
+                admin_test_path(test),
+                method: :delete,
+                data: { confirm: t('.confirm') },
+                class: 'btn btn-danger btn-sm',
+                style: 'background-color: #dc3545 !important; padding: 0.5rem 0.5rem !important;' %>
   </td>
 </tr>
