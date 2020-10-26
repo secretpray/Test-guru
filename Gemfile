@@ -5,7 +5,8 @@ ruby '2.7.1'
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
-gem 'sqlite3', '~> 1.4'
+# gem 'sqlite3', '~> 1.4'
+gem 'pg'
 gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
