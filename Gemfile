@@ -10,7 +10,8 @@ gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
-gem 'webpacker', '~> 5.x'
+gem 'webpacker', '~> 4.0'
+#gem 'webpacker', '~> 5.x'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
