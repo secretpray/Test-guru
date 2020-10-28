@@ -8,10 +8,10 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
 gem 'pg'
 gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
-gem 'webpacker', '~> 4.0'
-#gem 'webpacker', '~> 5.x'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
