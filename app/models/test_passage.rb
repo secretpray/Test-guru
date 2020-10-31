@@ -41,6 +41,10 @@ class TestPassage < ApplicationRecord
     ((current_question_index.to_f / questions_count.to_f) * 100).to_i
   end
 
+  def calc_percenet_css(percent)
+    (440 - (440 * percent)  / 100)
+  end
+
   private
 
   def before_validation_set_next_question
