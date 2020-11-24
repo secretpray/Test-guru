@@ -2,12 +2,16 @@
   <%= render 'shared/errors', resource: @question %>
 
   <div class="form-group mt-3">
-    <%= form.label :question, id: :body %> <br>
-    <%= form.text_area :body, id: :question_body, cols: 40, rows: 4, class: 'form-control' %>
+    <%= form.label :question, id: :body, class: 'label-tweak1' %><br>
+    <%= form.text_area :body, id: :question_body, cols: 44, rows: 4, class: 'form-control' %>
   </div>
 
-  <button class="btn btn-outline-secondary mt-3 ml-4" type="reset" >
-        <%= link_to t('.back'), admin_test_path(@question.test), style: "text-decoration: none; color: #6c757d;" %> </button>
-  <button class="btn btn-outline-secondary mt-3" type="submit">
-    <%= button_select(@question) %></button>
+    <div class="btn-group mt-3 grid-two-card" role="group">
+      <button type="button" class="btn btn-light ml-2 mr-2" id="back-tests" >
+        <%= link_to t('.back'), admin_test_path(@question.test) %>
+      </button>
+      <button type="submit" class="btn btn-light mr-2 ml-2" id="create-test">
+        <%= button_select(@question) %>
+      </button>
+    </div>
 <% end %>

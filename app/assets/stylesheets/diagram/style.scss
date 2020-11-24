@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 /*
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 *
 {
   margin: 0;
@@ -17,6 +18,7 @@ body
 */
 .container_diagramm
 {
+  background: #E8EFF5;
   position: relative;
   width: 250px;
   display: flex;
@@ -26,13 +28,14 @@ body
 {
   position: relative;
   width: 250px;
-  background: linear-gradient(0deg,#f8f8f8,#fff,#f8f8f8);
+  background: transparent;
+  /*background: linear-gradient(0deg,#f8f8f8,#fff,#f8f8f8);*/
   opacity: 0.9;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 300px;
-  border-radius: 4px;
+  border-radius: 25px;
   text-align: center;
   overflow: hidden;
   transition: 0.5s;
@@ -154,4 +157,3 @@ svg circle:nth-child(2)
 {
   stroke: #ff04f7;
 }
-

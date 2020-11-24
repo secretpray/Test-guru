@@ -14,7 +14,7 @@ class Test < ApplicationRecord
   scope :easy, -> { by_level(0..1) } 
   scope :medium, -> { by_level(2..4) }
   scope :hard, -> { by_level(5..Float::INFINITY) } 
-  scope :by_level, -> (level) { where(level: level) }
+  scope :by_level, -> (level) { where(l"level = ?", level) }
   scope :by_category, -> (category) { joins(:category).where(categories: {title: category.to_s}) }
 
   def self.sorted_names_by_category(category, sort = :asc)

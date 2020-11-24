@@ -4,11 +4,24 @@ document.addEventListener('turbolinks:load', function() {
   if (progressBar) {
     const currentQuestionIndex = progressBar.dataset.currentQuestionIndex
     const questionsCount = progressBar.dataset.questionsCount
+    const testPassageTitle = progressBar.dataset.testPassageTitle
 
-    const percentage = ((currentQuestionIndex / questionsCount) * 100) + '%'
+    const check = ((currentQuestionIndex / questionsCount) * 100);
+    const percentage = Math.round((currentQuestionIndex / questionsCount) * 100) + '%'
+    const percentageTitle = `"${testPassageTitle}": ( ${percentage} )`
 
     progressBar.style.width = percentage;
-    progressBar.textContent = percentage;
+
+    if (check > 0 ) {
+      progressBar.classList.add("progress-bar-striped");
+      progressBar.classList.add('progress-bar-animated');
+      progressBar.textContent = percentageTitle;
+    } else {
+      progressBar.style.width = '100%';
+      progressBar.style.backgroundColor = '';
+      progressBar.textContent = `"${testPassageTitle}"`;
+    }
+
   }
 })
 

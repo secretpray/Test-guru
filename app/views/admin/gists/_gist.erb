@@ -1,9 +1,9 @@
 <tbody>
-  <tr>
-    <td><%= gist.id %></td>
+  <tr class="tr">
+    <td class="text-center"><%= gist.id %></td>
     <td class="text-center"><%= gist.user.email %></td>
-    <td><%= link_to truncate(gist.question.body, length: 25), admin_question_path(gist.question) %></td>
+    <td class="text-center"><%= link_to truncate(gist.question.body, length: 25), admin_question_path(gist.question) %></td>
     <td class="text-center"><%= link_to gist.gist_url, gist.gist_url %></td>
-    <td><%= link_to 'Open', gist.gist_url, class: "btn btn-warning", target: 'blank' %></td>
+    <td class="text-center"><%= link_to t('.open_link'), gist.gist_url, target: 'blank', class: "btn ml-1", id: 'start-button-tp' %></td>
   </tr>
 </tbody>

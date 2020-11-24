@@ -1,7 +1,7 @@
-<tr>
-  <td><%= test.title %></td>
-  <td style="text-align: left"><%= test_level(test) %></td>
-  <td><%= test.category.title %>
-  <td style="text-align: center"><%= test.questions.count %></td>
-  <td><%= button_to t('.start'), start_test_path(test), class:"btn btn-warning ml-1" %></td>
+<tr class="tr">
+  <td class="cell"><%= test.title %></td>
+  <td class="cell" style="text-align: left"><%= test_level(test) %></td>
+  <td class="cell"><%= test.category.title %>
+  <td class="cell" style="text-align: center"><%= test.questions.count %></td>
+  <td class="cell" style="text-align: center"><%= button_to t('.start'), start_test_path(test), class: "btn ml-1", id: "start-button-tp"  %></td>
 </tr>

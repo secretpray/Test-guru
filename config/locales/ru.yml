@@ -26,10 +26,40 @@ ru:
       answer:
         body: "Ответ"
         correct: "Верный"
+      feedback:
+        title: "Заголовок"
+        body: "Содержание отзыва"
     select:
-      prompt: "Выберите категорю"
+      prompt: "Выберите категорию..."
 
   shared:
+    sidebar:
+      welcome: "Добро пожаловать"
+      logout: "Выйти"
+      login: "Войти"
+      signup: "Регистрация"
+      gist: "Список Gist"
+      feedback: "Пожелания"
+      create_test: "Создать Test"
+      start_test: "Старт Test"
+      welcome_admin: "Приветствую в Admin Panel"
+      welcome_user: "Приветствую Test Guru"
+    sertificate:
+      certificate: "СЕРТИФИКАТ"
+      of_completion: "ПРОХОЖДЕНИЯ"
+      completed: "успешно сдал тест:"
+      score: "с результатом:"
+      passed: "ПРОЙДЕН"
+      date: "ДАТА"
+      number: "Номер Сертификата"
+      back: "Назад"
+    bad-sertificate:
+      back: "Назад"
+      non_completion: "Неуспешный результат"
+      is_presented: "Этот сертификат подтверждает что"
+      unsuccessful: "неуспешно"
+      completion: "прошел тест:"
+      scored: "с результатом "
     errors:
       header:
         one: "Обнаружена %{count} ошибка"
@@ -82,6 +112,8 @@ ru:
         gist_question: "Вопрос"
         gist_link: "Gist ссылка"
         gist_action: "Действия"
+      gist:
+        open_link: "Открыть"
     nav:
       header: "панель администратора"
       welcome: "Приветствую"
@@ -139,6 +171,7 @@ ru:
         success: "Вопрос успешно создан"
         not_success: "Вопрос не сохранен!"
       edit:
+        header_lite: "Редактирование вопроса"
         header: "Редактирование вопроса: %{title}"
       update:
         success: "Вопрос успешно обновлен"
@@ -154,14 +187,15 @@ ru:
         action: "Действия"
         back: "Назад к тесту"
       question:
-        edit: "Изменить"
-        delete: "Удалить"
-        show_answers: "Показать ответы"
+        edit: " Изменить"
+        delete: " Удалить"
+        show_answers: " Ответы"
       form:
         back: "Назад к Тесту"
         create: "Создать новый"
         edit: "Изменить"
         question: "вопрос"
+        update: "Обновить"
     answers:
       create:
         success: "Ответ успешно создан"
@@ -181,16 +215,27 @@ ru:
         correct: "Верный"
         back: "Назад к вопросу"
       answer:
-        show: "Показать"
-        edit: "Изменить"
-        delete: "Удалить"
+        show: " Показать"
+        edit: " Изменить"
+        delete: " Удалить"
       back_button:
         back: "Назад к вопросу"
+      form:
+        back: "Назад"
+        create: "Создать"
+        update: "Обновить"
   pages:
     index:
+      upgrade: "Стань лучше"
+      header: "панель администратора"
+      welcome: "Приветствую"
+      logout: 'Выйти'
+      login: "Войти"
+      apanel: "Админ панель | TestGuru"
       create: "Создать тест"
       view: "Список тестов"
       gist: "Список gist"
+      start_test: "Старт Test"
       title: "Программа для тестирования знаний"
       benefits: "Преимущества:"
       goal: "Цель проекта - создание приложение для составления тестов, проведение тестирования и оценки знаний."
@@ -205,3 +250,10 @@ ru:
   test_mailer:
     completed_test:
       subject: "Вы прошли TestGuru."
+
+  feedbacks:
+    form:
+      back: "Отказаться"
+      send: "Отправить"
+    new:
+      send_feedback: "Создание отзыва о работе"

@@ -1,21 +1,30 @@
-<div class="container p-3">
-  <div class="row">
-    <div class="col justify-content-center">
-      <h1 class="text-center mt-3 mb-4"><%= t('.gist_list') %></h1>
-        <table class="table">
-          <thead class="table-dark">
-            <tr>
-              <th scope="col" class="text-center">#</th>
-              <th scope="col" class="text-center"><%= t('.gist_user') %></th>
-              <th scope="col" class="ml-3"><%= t('.gist_question') %></th>
-              <th scope="col" class="text-center"><%= t('.gist_link') %></th>
-              <th scope="col"><%= t('.gist_action') %></th>
-            </tr>
-          </thead>
+<%= render 'shared/sidebar' %>
 
-            <%= render @gists %>
+<div class="menu-icon" id="menu-icon-tl" >
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 
-        </table>
-    </div>
-  </div>
+<div class="col justify-content-center table-container">
+  <h1 class="text-center mt-3 mb-4">
+    <span class="admin-tests-text"><%= t('.gist_list') %></span>
+  </h1>
+    <table class="table" style="min-width: 980px">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col" class="text-center" style="width: 4%;">#</th>
+          <th scope="col" class="text-center" style="width: 16%;"><%= t('.gist_user') %></th>
+          <th scope="col" class="ml-3" style="width: 25%;"><%= t('.gist_question') %></th>
+          <th scope="col" class="text-center" style="width: 40%;"><%= t('.gist_link') %></th>
+          <th scope="col" class="text-center" style="width: 15%;"><span class="neon"><%= t('.gist_action') %></span></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <%= render @gists %>
+
+      </tbody>
+    </table>
+
 </div>

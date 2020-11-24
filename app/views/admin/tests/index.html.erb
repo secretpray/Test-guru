@@ -1,6 +1,17 @@
-<h1 class="text-center mt-3 mb-4" ><%= t('.header') %></h1>
+<%= render 'shared/sidebar' %>
 
-<%= render 'shared/errors', resource: @test %>
+<div class="menu-icon" id="menu-icon-tl" >
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<div class="col justify-content-center table-container">
+
+  <h1 class="text-center mt-3 mb-4" >
+    <span class="admin-tests-text"><%= t('.header') %></span>
+  </h1>
+  <%= render 'shared/errors', resource: @test %>
 
   <table class="table">
     <thead class="table-dark">
@@ -10,11 +21,11 @@
           <%= octicon 'arrow-up', class: 'text-success hide', style: 'height: 16px !important' %>
           <%= octicon 'arrow-down', class: 'text-success hide', style: 'height: 16px !important'%>
         </th>
-        <th scope="col" class="text-center"><%= t('.level') %></th>
-        <th scope="col" class="text-center"><%= t('.category') %></th>
-        <th scope="col" class="text-center"><%= t('.author') %></th>
-        <th scope="col" class="text-center"><%= t('.questions') %></th>
-        <th colspan="4" class="text-center"><%= t('.action') %></th>
+        <th scope="col" class="text-center cell"><%= t('.level') %></th>
+        <th scope="col" class="text-center cell"><%= t('.category') %></th>
+        <th scope="col" class="text-center cell"><%= t('.author') %></th>
+        <th scope="col" class="text-center cell"><%= t('.questions') %></th>
+        <th colspan="4" class="text-center cell"><span class="neon"><%= t('.action') %></span></th>
       </tr>
     </thead>
     <tbody>
@@ -24,12 +35,4 @@
     </tbody>
   </table>
 
-  <div class="btn btn-group mt-3">
-    <button type="button" class="btn btn-warning mr-1">
-      <%= link_to t('.create'), new_admin_test_path, style: "text-decoration: none; color: #6c757d;" %>
-    </button>
-
-    <button type="button" class="btn btn-info">
-      <%= link_to t('.gist'), admin_gists_path, style: "text-decoration: none; color: #fff;" %>
-    </button>
-  </div>
+</div>

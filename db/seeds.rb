@@ -1,8 +1,9 @@
-Category.delete_all
-Question.delete_all
 Answer.delete_all
 TestPassage.delete_all
+Gist.delete_all
+Question.delete_all
 Test.delete_all
+Category.delete_all
 User.delete_all
 USERS = [
   { first_name: 'Петр', last_name: 'Немов', email: 'nemov@mail.com', login: 'nemov', type: "Admin", password: 'secretus', confirmed_at: Time.now },
@@ -18,9 +19,14 @@ end
 DATA_TEST =
 [
    frontend: {
-     html: { 'Как расшифровывается HTML?' => ['Hyper Text Markup Language', 'Home Tool Markup Language', 'Hyperlinks and Text Markup Language'] },
-     css:  { 'CSS-код: body {font-size: 14pt;} p {font-size: 2em;}. Какой размер текста будет в теге <p>:' => %w[28pt 16pt 7pt 12pt] },
-     flash: { 'Событие ENTER_FRAME зависит от частоты кадров SWF файла?' =>  %w[Yes No] }
+     html:  { 'Как расшифровывается HTML?' => ['Hyper Text Markup Language', 'Home Tool Markup Language', 'Hyperlinks and Text Markup Language'],
+              'Какая запись для гиперссылки верна?' => [ '<a href="some_link"...', '<a http="some_link"...', ' <a="some_link"...' ]},
+     css:   { 'CSS-код: body {font-size: 14pt;} p {font-size: 2em;}. Какой размер текста будет в теге <p>:' => %w[28pt 16pt 7pt 12pt],
+              'Что обеспечивает функциональность разметки' => [ 'Тэги', 'Функции', 'Замыкания']},
+     flash: { 'Событие ENTER_FRAME зависит от частоты кадров SWF файла?' =>  %w[Yes No]},
+     ruby:  { 'Укажите результат выражения 1++' => [ '2', '1', '4'],
+              'Какой метод позволяет привести строку в нижний регистр:' => ['downcase', 'lowercase', 'text-transform'],
+              'Чем отличается puts от print:' => ['print без переноса строки, а puts с переносом', 'puts позволяет выводить переменные, а print только текст', 'ничем']}
    },
    backend:  {
      php:  { 'Что будет в переменной $result после выполнения кода $result = 2 ** 3;?' => %w[8 6 2 4] },

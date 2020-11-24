@@ -1,30 +1,30 @@
-<tr>
-  <td class="align-middle">
+<tr class="tr">
+  <td class="align-middle cell">
     <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
     <%= render 'form_inline', test: test == @test ? @test : test %>
   </td>
-  <td class="align-middle text-center"><%= test_level(test) %></td>
-  <td class="align-middle text-center"><%= test.category.title %>
-  <td class="align-middle text-center"><%= test.author.login %></td>
-  <td class="align-middle text-center"><%= test.questions.count %></td>
-  <td class="align-middle text-center">
+  <td class="align-middle text-center cell"><%= test_level(test) %></td>
+  <td class="align-middle text-center cell"><%= test.category.title %>
+  <td class="align-middle text-center cell"><%= test.author.login %></td>
+  <td class="align-middle text-center cell"><%= test.questions.count %></td>
+  <td class="cell">
     <%= link_to t('.show'), admin_test_path(test),
-                class: 'btn btn-info btn-sm',
-                style: 'background-color: #17a2b8 !important; padding: 0.5rem 0.5rem !important;' %>
+                id: 'view-button-tp',
+                class: '' %>
   </td>
-  <td class="align-middle">
+  <td class="cell">
     <%= link_to t('.edit'),
                 edit_admin_test_path(test),
                 data: { test_id: test.id, edit_label: t('forms.edit'), cancel_label: t('forms.cancel') },
-                class: 'form-inline-link btn btn-warning btn-sm',
-                style: 'background-color: #ffc106 !important; padding: 0.5rem 0.5rem !important;' %>
+                id: 'edit-button-tp',
+                class: 'form-inline-link' %>
   </td>
-  <td class="align-middle">
+  <td class="cell">
     <%= link_to t('.delete'),
                 admin_test_path(test),
                 method: :delete,
                 data: { confirm: t('.confirm') },
-                class: 'btn btn-danger btn-sm',
-                style: 'background-color: #dc3545 !important; padding: 0.5rem 0.5rem !important;' %>
+                id: 'delete-button-tp',
+                class: '' %>
   </td>
 </tr>
