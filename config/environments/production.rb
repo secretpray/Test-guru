@@ -60,11 +60,15 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "Test_guru_production"
 
-  config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'https://guru-tst.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'https://guru-test-2020.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.perform_caching = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
     addresss:              'smtp.gmail.com',
+    domain:                "gmail.com",
     port:                   587,
     user_name:              ENV['SMTP_USERNAME'],
     password:               ENV['SMTP_PASSWORD'],
