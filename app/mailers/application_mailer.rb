@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'a.p.ruban@gmail.com'
+  default from: 'ruban.rails.dev@gmail.com'
   layout 'mailer'
 end
