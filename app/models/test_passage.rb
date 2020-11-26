@@ -35,7 +35,7 @@ class TestPassage < ApplicationRecord
   end
 
   def current_question_number
-    test.questions.where('id <= :id', id: current_question.id).count
+    test.questions.any? ? test.questions.where('id <= :id', id: current_question.id).count : 0
   end
 
   def progress_percent

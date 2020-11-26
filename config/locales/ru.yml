@@ -81,6 +81,7 @@ ru:
       category: "Категория"
     test:
       start: "Начать"
+      empty: "Пусто"
 
   test_passages:
     result:
@@ -93,6 +94,7 @@ ru:
       success: "Gist успешно сохранён! <a href='%{gist_url}' target='_blank'>Ссылка</a>"
       failure: "Во время сохранения gist произошла ошибка"
     show:
+      empty_tests: "Тест не готов к прохождению в виду отсутствия вопросов"
       header: "Прохождение"
       question: "Вопрос"
       from: "из"

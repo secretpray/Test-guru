@@ -10,6 +10,8 @@ class TestsController < ApplicationController
   end
 
   def start
+    return unless @test.questions.any?
+
     current_user.tests.push(@test)
     
     redirect_to current_user.test_passage(@test)

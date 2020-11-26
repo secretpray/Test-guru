@@ -2,7 +2,9 @@ class TestPassagesController < ApplicationController
 
   before_action :set_test_passage, only: %i[show result update gist]
 
-  def show; end
+  def show
+    redirect_to tests_path, alert: t('.empty_tests') unless @test_passage.test.questions.any?
+  end
 
   def result;  end
 

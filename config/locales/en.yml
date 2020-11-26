@@ -79,6 +79,7 @@ en:
       questions: "Questions"
     test:
       start: "Start"
+      empty: "Empty"
 
   test_passages:
     result:
@@ -91,6 +92,7 @@ en:
       success: "Gist was successfully created! <a href='%{gist_url}' target='_blank'>Link</a>"
       failure: "An error occurred while saving gist"
     show:
+      empty_tests: "Test not ready to start. Test questions empty!"
       header: "Passing the"
       question: "Question"
       from: "from"
