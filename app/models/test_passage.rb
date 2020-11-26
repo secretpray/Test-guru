@@ -10,6 +10,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    
     save!
   end
 
@@ -34,7 +35,7 @@ class TestPassage < ApplicationRecord
   end
 
   def current_question_number
-    test.questions.where('id <= :id', id: current_question.id).count
+    test.questions.any? ? test.questions.where('id <= :id', id: current_question.id).count : 0
   end
 
   def progress_percent

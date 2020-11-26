@@ -1,16 +1,21 @@
-<tr>
-  <td><%= question.body %></td>
-  <td style="text-align: center"><%= question.answers.count %></td>
-  <td><%= link_to edit_admin_question_path(question) do %>
-     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-      <% end %>
+<tr class="tr">
+  <td class="align-middle cell"><%= question.body %></td>
+  <td class="align-middle text-center cell"><%= question.answers.count %></td>
+  <td class="align-middle text-center cell">
+    <%= link_to edit_admin_question_path(question), id: 'edit-button-tv' do %>
+      <i class="fa fa-pencil-square-o" aria-hidden="true"><%= t('.edit') %></i>
+    <% end %>
   </td>
-  <td><%= link_to admin_question_path(question), method: :delete, data: { confirm: 'Are you sure?'} do %>
-        <i class="fa fa-trash-o" aria-hidden="true"></i>
-      <% end %>
+
+  <td class="align-middle text-center cell">
+    <%= link_to admin_question_path(question), method: :delete, data: { confirm: 'Are you sure?'}, id: 'delete-button-tv' do %>
+      <i class="fa fa-trash-o" aria-hidden="true"><%= t('.delete') %></i>
+    <% end %>
   </td>
-  <td><%= link_to admin_question_path(question) do%>
-        <i class="fa fa-table" aria-hidden="true"></i>
-      <% end %>
+
+  <td class="align-middle text-center cell">
+    <%= link_to admin_question_path(question), id: 'view-button-tv' do %>
+      <i class="fa fa-table" aria-hidden="true"><%= t('.show_answers') %></i>
+    <% end %>
   </td>
 </tr>

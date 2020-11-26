@@ -1,19 +1,41 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col col-lg-8 offset-4 mt-5">
-      <div class="card" style="width: 24rem;">
-        <div class="card-header">
-          <h5 class=""> <%= @answer.question.body %></h5>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item font-weight-bold"><%= t('.answer') %>: <%= @answer.body %></li>
-          <li class="list-group-item font-weight-bold"><%= t('.correct') %>: <%= @answer.correct %></li>
-        </ul>
-      </div>
-      <button type="button" class="btn btn-light mt-4 mb-3 ml-5">
-        <%= link_to t('.back'), admin_question_path(@answer.question), style: "text-decoration: none; color: #6c757d;" %></button>
-      <button type="button" class="btn btn-light mt-4 mb-3">
-        <%= link_to t('.edit'), edit_admin_answer_path(@answer), style: "text-decoration: none; color: #6c757d;" %> </button>
+<%= render 'shared/sidebar' %>
+
+<div class="menu-icon" id="menu-icon-tl" >
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<div class="wrapper-card">
+  <div class="card border-secondary mb-3 mt-5" id="tests-card">
+    <div class="tests-card-header text-center text-uppercase font-weight-bold mt-3">
+      <%= @answer.question.body %>
     </div>
+
+    <div class="card-body text-secondary">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item mt-4" id="background-neu">
+          <strong><%= t('.answer') %>:</strong> <%= @answer.body %>
+        </li>
+        <li class="list-group-item mt-1" id="background-neu">
+          <strong><%= t('.correct') %>:</strong>
+          <% if @answer.correct %>
+            <span class="text-success"> <%= @answer.correct %> </span>
+          <% else %>
+            <span class="text-danger"> <%= @answer.correct %> </span>
+          <% end %>
+        </li>
+      </ul>
+  </div>
+
+  <div class="button-inline mt-3 mb-3">
+    <button type="button" class="btn btn-neu-card mr-1" id="hover-red">
+      <%= link_to t('.back'), admin_question_path(@answer.question) %>
+    </button>
+    <button type="button" class="btn btn-neu-card ml-1">
+      <%= link_to t('.edit'), edit_admin_answer_path(@answer) %>
+    </button>
+  </div>
+
   </div>
 </div>

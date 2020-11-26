@@ -1,8 +1,10 @@
-<footer class="page-footer font-small bg-light font-weight-lighter" style="position: fixed; bottom: 0; width: 100%;">
+<footer class="page-footer font-small bg-light font-weight-lighter mx-auto" id="page-footer">
   <div class="footer-copyright text-center py-3">
     TestGuru v<%= TestGuru::VERSION%>. Copyright <%=current_year%> &copy; <%= TestGuru::AUTHOR %>
-    (<i class="fa fa-code-fork" aria-hidden="true"><%= github_url(TestGuru::NAME, TestGuru::GITHUB_AUTHOR, TestGuru::GITHUB_REPO) %>)</i>
+    <i class="fa fa-github" aria-hidden="true" >
+       <%= github_url(TestGuru::NAME, TestGuru::GITHUB_AUTHOR, TestGuru::GITHUB_REPO) %>
+    </i>
     <%= t('.project_description') %>
-    <%= link_to 'Thinknetica', TestGuru::PROJECT_LINK, target: :blank %>
+    <%= link_to 'Thinknetica', TestGuru::PROJECT_LINK, target: :blank, class: "btn-link-custom" %>
   </div>
 </footer>

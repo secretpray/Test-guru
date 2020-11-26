@@ -1,35 +1,52 @@
-<div class="row justify-content-center mt-3">
-  <div class="col col-md-4">
-    <div class="card border-secondary mb-3 mt-5" style="max-width: 18rem;">
-      <div class="card-header text-center"><%= t('.title') %></div>
-      <div class="card-body text-secondary">
-        <div class="card-text">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= render 'shared/sidebar' %>
 
-          <div class="form-group mt-3">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
-          </div>
 
-          <div class="form-group mt-3">
-            <%= f.label :password %><br />
-            <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
-          </div>
+<div class="menu-icon" id="menu-icon-tl" >
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 
+<div class="login-div" id="session-login-div" >
+  <div class="logo">
+    <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
+  </div>
+  <div class="title"><%= t('.title') %></div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+      <div class="fields">
+        <div class="username">
+          <i class="fa fa-envelope" id="session-login-icon" aria-hidden="true"></i>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", id: "session-login-input", class: 'input-fields', placeholder: "User email" %>
+        </div>
+
+        <div class="password">
+          <i class="fa fa-lock" id="session-passowrd-icon" aria-hidden="true"></i>
+          <%= f.password_field :password, autocomplete: "current-password", id: "session-password-input", class: 'input-fields', placeholder: "User password" %>
+        </div>
+
+        <div class="row">
           <% if devise_mapping.rememberable? %>
             <div class="form-group form-check mt-3">
               <%= f.check_box :remember_me %>
-              <%= f.label t('.remember_me'), class: 'form-check-label'  %>
-            </div>
+              <%= f.label t('.remember_me'), class: 'form-check-label' %>
           <% end %>
-
-          <div class="actions mt-3 mb-2">
-            <%= f.submit t('.submit') %>
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to t('.forgot'), new_password_path(resource_name), class: 'form-check-label', style: "color: #3488db; padding: 0 0 0 28px;" %><br />
+          <% end %>
           </div>
-        <% end %>
-        <%= render "devise/shared/links" %>
         </div>
+
+        <button class="signup-button mt-4" type="submit">
+          <span class="signin-button-text"><%= t('.submit') %></span>
+        </button>
       </div>
-    </div>
+    <% end %>
+
+  <div class="form-group form-check text-center mt-2">
+    <span> <%= t('.not_regist') %></span>
+    <span><%= link_to t('.promt_registered'), new_registration_path(resource_name), class: 'form-check-label', style: "color: #3488db;"  %></span>
   </div>
+
 </div>
+

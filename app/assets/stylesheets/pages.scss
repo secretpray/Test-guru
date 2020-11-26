@@ -1,7 +1,8 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.app-welcome-text {
+
+*.app-welcome-text {
   font-size: large;
 }
 
@@ -23,9 +24,6 @@
   transform: translate(-50%, -50%)
 }
 
-body {
-  background-color: #fafafa;
-}
 div.container {
   margin-left: auto;
   margin-right: auto;
@@ -99,8 +97,531 @@ a.socnet-link {
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: calc(100% - 300px);
   background-color: rgba(0,0,0,0.1);
   color: #737373;
   text-align: center;
+}
+
+body {
+  background: #e8eff5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+
+#pages h1 {
+font-family: "Roboto", sans-serif;
+/*color: #525252;*/
+/*font-size: 24px;*/
+/*font-weight: 300;*/
+/*letter-spacing: 4px;*/
+text-transform: uppercase;
+margin: 50px 0 0 0;
+text-align: center;
+}
+
+.neu-h1-title {
+  color: #E8EFF5;
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: 8px;
+  text-shadow: 8px 8px 18px rgba(0,0,0,0.4),
+              -8px -8px 12px rgba(255,255,255,0.9);
+}
+
+#link-pages {
+  display: flex;
+}
+
+#btn-admin-pages,
+#btn-pages {
+  background: #e8eff5;
+  height: 80px;
+  width: 80px;
+  margin: 0 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 400ms;
+
+  box-shadow: 7px 7px 15px #bbcfda, -4px -4px 13px #fff,
+        inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+        inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+#btn-admin-pages {
+  margin: 0 10px;
+  width: 180px;
+  height: 60px;
+}
+
+#btn-admin-pages a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #727272;
+  transition: all 400ms;
+}
+
+#btn-pages i {
+  font-size: 36px;
+  color: #727272;
+  transition: all 400ms;
+}
+
+#btn-admin-pages:hover a,
+#btn-pages:hover i {
+  transform: scale(0.85);
+  opacity: 0.7;
+  transition: transform 400ms;
+}
+
+.menu-icon:hover,
+#btn-admin-pages:hover,
+#btn-pages:hover {
+  box-shadow: 4px 4px 12px #bbcfda,
+            -4px -4px 12px #fff,
+        inset 4px 4px 12px rgba(209, 217, 230, 0.8),
+        inset -8px -8px 18px rgba(255, 255, 255, 0.6);
+
+  transform: translateY(2px);
+  border: 1px solid rgba(255, 255, 255, 0.01);
+}
+
+.menu-icon.active:hover span,
+.menu-icon:hover span {
+  background-color: #008EFF;
+  transform: scale(0.85);
+  opacity: 0.7;
+  transition: transform 400ms;
+}
+
+
+#btn-pages:hover .fa-check-square-o {
+  color: #FF4141;
+  opacity: 0.6;
+}
+
+#btn-admin-pages a {
+  /*red*/
+  /*color: #FF4141;*/
+  /*blue #008EFF*/
+  color: #698EAB;
+  font-weight: bold;
+  letter-spacing: 1.5;
+  opacity: 0.6;
+}
+
+#btn-admin-pages:hover a {
+  color: #008EFF;
+  font-weight: bold;
+  letter-spacing: 1.5;
+  opacity: 0.6;
+}
+
+.menu-icon {
+  background: #e8eff5;
+  height: 80px;
+  width: 80px;
+  margin: 0 16px;
+  border-radius: 8px;
+  position: relative;
+  opacity: 0.8;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 400ms;
+  box-shadow: 7px 7px 15px #bbcfda, -4px -4px 13px #fff,
+        inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+        inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+#menu-icon-tl {
+  position: fixed;
+  top: 10px;
+  right: 0;
+}
+
+
+.menu-icon span {
+  width: 45%;
+  height: 5px;
+  position: relative;
+  display: grid;
+  background: #727272;
+  left: 25px;
+  top: 20px !important;
+  margin: 6px 6px -1px 0px;
+  transition: .5s;
+}
+
+#menu-icon-tl span {
+  width: 60%;
+  left: 14px;
+}
+
+.menu-icon.active span {
+  width: 30px !important;
+  height: 6px;
+  position: relative;
+  display: grid;
+  background: #727272;
+  left: 26px;
+  top: 42px !important;
+  margin: -6px 0px 0px 0px;
+  transition: .5s;
+}
+
+#menu-icon-tl.active span {
+  width: 34px;
+  left: 12px;
+  top: 40px;
+}
+
+.menu-icon.active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.menu-icon.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.menu-icon.active span:nth-child(2) {
+  display: none;
+}
+
+.social-icon {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  display: flex;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.social-icon li {
+  width: 20%;
+  text-align: center;
+  list-style: none;
+}
+
+.social-icon li a {
+  display: block;
+  font-size: 18px;
+  color: #727272;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  transition: .5s;
+}
+
+.social-icon li a:hover {
+  background: #0d6efd;
+  /*background: #FF4141;*/
+  opacity: 0.6;
+  color: #fff;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: rgba(222, 229, 232, 0.5);
+  opacity: 0.9;
+  transition: .5s;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar i {
+  text-transform: uppercase;
+}
+
+.sidebar .menu {
+  margin: 0;
+  padding: 40px 0;
+}
+
+.sidebar .menu li {
+  list-style: none;
+}
+
+.sidebar .menu li a {
+  display: block;
+  padding: 10px 0;
+  text-transform: uppercase;
+  color: #727272;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.sidebar .menu li a:hover {
+  background: #FF4141;
+  opacity: 0.6;
+  color: #fff;
+}
+
+#back-tests,
+#create-test,
+.btn-neu-yellow,
+.btn-neu-green,
+.btn-neu-blue,
+.btn-neu-card,
+.btn-neus,
+.btn-neu {
+  min-width: 180px;
+  height: 40px;
+  margin: 20px;
+  background: transparent;
+  border-radius: 10px;
+  color: #727272;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 400ms;
+  box-shadow: 7px 7px 15px #bbcfda, -4px -4px 13px #fff,
+        inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+        inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+#create-test,
+#back-tests {
+  opacity: .7;
+  color: #6C757D;
+  font-size: 15px;
+  min-width: 150px;
+}
+
+#back-tests a {
+  text-decoration: none;
+  color: #6C757D;
+}
+
+#hover-red:hover a,
+#back-tests:hover a {
+  background: transparent;
+  color: red;
+}
+
+#create-test:hover {
+  opacity: .9;
+  color: #FFC106;
+  background: transparent;
+}
+
+.btn-neu-yellow a
+.btn-neu-green a,
+.btn-neu-blue a,
+.btn-neu-card a,
+.btn-neus a,
+.btn-neu a {
+  text-decoration: none;
+  color: #7A9BB3;
+}
+
+.btn-neu-card a {
+  color: #5C5F61;
+}
+
+#create-test:hover,
+#back-tests:hover,
+.btn-neu-yellow:hover,
+.btn-neu-green:hover,
+.btn-neu-blue:hover,
+.btn-neu-card:hover,
+.btn-neus:hover,
+.btn-neu:hover {
+  transform: scale(0.95);
+  box-shadow: 4px 2px 18px #bbcfda, -4px -4px 13px #fff,
+        inset 6px 6px 16px rgba(209, 217, 230, 0.8),
+        inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+}
+
+
+/*#create-test:hover,*/
+.btn-neu-yellow:hover {
+  color: #fff;
+  background: #FFC106;
+}
+
+
+/*#back-tests:hover,*/
+.btn-neu-blue:hover,
+.btn-neu-green:hover {
+  color: #fff;
+  background: #0D6EFD;
+}
+
+/*#back-tests:hover {
+  opacity: 0.7;
+  color: #FF4141 !important;
+  font-weight: 700;
+}*/
+
+.btn-neu-yellow:hover a,
+.btn-neu-green:hover a,
+.btn-neu-blue:hover a,
+.btn-neu-card:hover a {
+  opacity: 0.7;
+  color: #0d6efd;
+  font-weight: 700;
+}
+
+
+/* Test passage show */
+.btn-neu-submit {
+  border: none !important;
+  text-transform: uppercase !important;
+  background: transparent !important;
+  letter-spacing: 1.5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #7A9BB3;
+}
+
+
+.btn-neu:hover a {
+  opacity: 0.7;
+  color: #FF4141;
+  font-weight: 700;
+}
+
+.btn-neus:hover a {
+  opacity: 0.7;
+  color: #0D6EFD;
+  font-weight: 700;
+}
+
+.btn-neu-submit:hover {
+  color: #008EFF;
+}
+
+
+#card-test-passage {
+  background: #F8FCFF;
+  box-shadow: 17px 17px 27px #bbcfda,
+             -14px -14px 23px #fff,
+        inset 14px 14px 28px rgba(209, 217, 230, 0.5),
+       inset -18px -18px 28px rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition: 0.5s all;
+}
+
+#card-test-passage:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,.5);
+}
+
+.container_diagramm {
+  top: -55px;
+}
+
+/* Language selector */
+.button-lang {
+  display: block;
+  margin: 42px 6px 0 12px;
+  background: #E4EAF0;
+  border-radius: 5px;
+}
+
+.button-lang .toggle-lang {
+  height: 25px;
+  width: 50px;
+}
+
+.toggle-lang input {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  left:  40px;
+  background: #E4EAF0;
+  outline: none;
+  -webkit-appearance: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: -8px -4px 8px 0px #ffffff73,
+              8px 4px 12px 0px rgba(94,104,121,0.288),
+              inset -4px -4px 4px 0px #ffffff73,
+              inset 4px 4px 4px 0px rgba(94,104,121,0.288);
+}
+
+.toggle-lang input:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #d6dce1;
+  box-shadow:  5px 5px 13px #898d90,
+             -5px -5px 13px #ffffff !important;
+  transition: left 0.4s cubic-bezier(0.85,0.05,0.18,1.35);
+}
+input:checked:before {
+  left: 27px;
+  box-shadow: -8px -4px 8px 0px #ffffff73;
+}
+
+.text-lang:before {
+  position: relative;
+  content: 'Русский';
+  margin-left: 12px;
+  font-size: 18px;
+  color: #7A9BB3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  float: left;
+  width: 112px;
+  top: -24px;
+  left:  26px;
+  font-weight: 700;
+  /*text-shadow: 2px 3px 5px rgba(125, 85, 85, 0.6);*/
+}
+
+.text-lang.en:before {
+  content: 'English';
+  color: #7A9BB3;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  /*text-shadow: 2px 3px 5px rgba(85, 85, 125, 0.6);*/
+}
+
+.text-lang.en:hover:before {
+  color: #008EFF;
+  /*color: rgba(0, 142, 255, .7);*/
+  transform: scale(0.97);
+}
+
+.text-lang:hover:before {
+  color: #008EFF;
+  /*color: rgba(255, 25, 94, .5);*/
+  transform: scale(0.97);
+}
+
+.dropdown:hover .dropdown-menu {
+display: block;
 }

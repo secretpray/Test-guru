@@ -1,15 +1,24 @@
-<div class="row justify-content-center mt-3">
-  <div class="col col-md-4">
-    <div class="card border-secondary mb-3 mt-5" style="max-width: 24rem;">
-      <div class="card-header text-center"><%= t('.create_new') %></div>
-        <div class="font-weight-bold mt-3 ml-3"><%= t('admin.tests.show.question') %>:</div>
-          <div class="ml-3"><%= @question.body %>:</div>
-            <div class="card-body text-secondary">
-              <div class="card-text">
-                <%= render 'form' %>
-              </div>
-            </div>
+<%= render 'shared/sidebar' %>
+
+<div class="menu-icon" id="menu-icon-tl" >
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+
+<div class="wrapper-card">
+  <div class="card border-secondary mt-3" id="tests-card">
+    <div class="tests-card-header text-center text-uppercase font-weight-bold">
+      <%= t('.create_new') %>
+    </div>
+    <div class="card-body text-secondary ml-3 mt-2">
+      <strong><%= t('admin.tests.show.question') %>:</strong>
+      <%= @question.body %>:
+    </div>
+
+    <div class="card-text" id="answer-card">
+      <%= render 'form' %>
     </div>
   </div>
 </div>
-

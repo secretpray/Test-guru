@@ -1,0 +1,88 @@
+<div class="sidebar">
+  
+  <% if user_signed_in? %>
+    <div>
+      <%= link_to root_path do %>
+        <%= image_tag "logo.png", class: "logo-sidebar-index" %>
+      <% end %>
+    </div>
+    <% if current_user.admin? %>
+      <span class="admin-panel-text"><%= t('.welcome_admin') %>,</span><br>
+      <span class="welcome-admin"><%= current_user.email %></span>
+      <hr class="hr-sidebar">
+    <% else %>
+      <span class="user-panel-text"><%= t('.welcome_user') %>,</span><br>
+      <span class="welcome-user"><%= current_user.email %></span>
+      <hr class="hr-sidebar">
+    <% end %>
+  <% else %>
+    <div>
+      <%= link_to root_path do %>
+        <%= image_tag "logo.png", class: "logo-sidebar-index" %>
+      <% end %>
+    </div>
+    <span class="user-panel-text"><%= t('.welcome_user') %></span><br>
+    <hr class="hr-sidebar">
+  <% end %>
+
+  <div class="button-lang">
+    <div class="toggle-lang ">
+      <input type="checkbox" <%= "checked" if I18n.locale == :en %> id="lang-switch">
+    </div>
+    <label class="text-lang <%= I18n.locale %>" for="lang-switch"></label>
+  </div>
+
+  <% if user_signed_in? && current_user.admin? %>
+
+    <button class="btn-neus mt-2">
+      <%= link_to t('pages.index.view'), admin_tests_path %>
+    </button>
+
+    <button class="btn-neus mt-2">
+      <%= link_to t('.gist'), admin_gists_path %>
+    </button>
+
+    <button class="btn-neus mt-2">
+      <%= link_to t('.create_test'), new_admin_test_path %>
+    </button>
+
+  <% end %>
+
+  <% if user_signed_in? %>
+    <div>
+      <button class="btn-neus mt-2">
+        <%= link_to t('.start_test'), tests_path %>
+      </button>
+
+      <button class="btn-neus mt-2">
+        <%= link_to t('.feedback'), new_feedback_path %>
+      </button>
+      
+      <button class="btn-neu mt-5">
+        <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
+      </button>
+    </div>
+
+  <% else %>
+  
+    <div>
+      <button class="btn-neus">
+        <%= link_to t('.login'), new_session_path(resource_name)%>
+      </button>
+      <button class="btn-neus">
+        <%= link_to t('.signup'), new_registration_path(resource_name) %>
+      </button>
+    </div>
+  
+  <% end %>
+
+  <div class="social-icon">
+    <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+    <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+    <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+    <li><a href=""><i class="fa fa-github" aria-hidden="true"></i></a></li>
+    <li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+  </div>
+
+</div>
+

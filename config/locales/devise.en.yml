@@ -2,8 +2,8 @@ en:
   devise:
     confirmations:
       new:
-        title: "Resend confirmation instructions"
-        submit: "Resend confirmation instructions"
+        title: "Resend confirmation"
+        submit: "Resend confirmation"
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
@@ -61,9 +61,13 @@ en:
       new:
         hello: "Hello, %{user}"
         noname: "Hello, Guru!"
-        title: "Enter the Guru Gates"
+        title: "Guru Gates"
         submit: "Enter"
         remember_me: "Remember me"
+        forgot: "Lost password?"
+        not_regist: "Not registered?"
+        promt_registered: "Create account"
+
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."

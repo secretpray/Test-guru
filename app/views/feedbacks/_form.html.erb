@@ -1,0 +1,25 @@
+<%= form_with model: @feedback, local:true do |f| %>
+  <%= render 'shared/errors', resource: @feedback %>
+
+  <div class="form-group mt-3 tests-form-text-field">
+    <%= f.label :title, class: "feedback-title-label" %> <br>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="form-group mt-3 tests-form-text-field">
+    <%= f.label :body, class: "feedback-body-label" %> <br>
+    <%= f.text_area :body, cols: 44, rows: 4, class: 'form-control' %>
+  </div>
+
+  <div class="btn-group feedback-form-button" role="group" >
+    <button type="button" class="btn btn-light" id="back-tests">
+      <%= link_to t('.back'), root_path %>
+    </button>
+
+    <button type="submit" class="btn btn-light" id="create-test" >
+      <%= t('.send') %>
+    </button>
+  </div>
+
+<% end %>
+

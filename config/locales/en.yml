@@ -25,10 +25,40 @@ en:
       answer:
         body: "Answer"
         correct: "Corrrect"
+      feedback:
+        title: "Title"
+        body: "Feedback content"
     select:
-      prompt: "Select category"
+      prompt: "Select category..."
 
   shared:
+    sidebar:
+      welcome: "Welcome"
+      logout: "Logout"
+      login: "Log in"
+      signup: "Sign up"
+      gist: "View Gist"
+      feedback: "Feedback"
+      create_test: "Create Test"
+      start_test: "Start Test"
+      welcome_admin: "Welcome to Admin Panel"
+      welcome_user: "Welcome to Test Guru"
+    sertificate:
+      certificate: "CERTIFICATE"
+      of_completion: "OF COMPLETION"
+      completed: "has successfully completed test:"
+      score: "with a score of:"
+      passed: "PASSED"
+      date: "DATE"
+      number: "Certificate Number"
+      back: "Back"
+    bad-sertificate:
+      back: "Back"
+      non_completion: "Certificate of non Completion"
+      is_presented: "This certificate is presented to"
+      unsuccessful: "unsuccessful"
+      completion: "completion of the test:"
+      scored: "with a score of "
     errors:
       header:
         one: "%{count} error detected"
@@ -49,6 +79,7 @@ en:
       questions: "Questions"
     test:
       start: "Start"
+      empty: "Empty"
 
   test_passages:
     result:
@@ -61,6 +92,7 @@ en:
       success: "Gist was successfully created! <a href='%{gist_url}' target='_blank'>Link</a>"
       failure: "An error occurred while saving gist"
     show:
+      empty_tests: "Test not ready to start. Test questions empty!"
       header: "Passing the"
       question: "Question"
       from: "from"
@@ -80,6 +112,8 @@ en:
         gist_question: "Question"
         gist_link: "Gist link"
         gist_action: "Action"
+      gist:
+        open_link: "Open"
     nav:
       header: "admin panel"
       welcome: "Welcome"
@@ -137,6 +171,7 @@ en:
         success: "Question successfully created"
         not_success: "Question unsuccessfully created"
       edit:
+        header_lite: "Edit question"
         header: "Edit question: %{title}"
       update:
         success: "Question successfully updated"
@@ -152,14 +187,15 @@ en:
         action: "Action"
         back: "Back to test"
       question:
-        edit: "Edit"
-        delete: "Delete"
-        show_answers: "Show answers"
+        edit: " Edit"
+        delete: " Delete"
+        show_answers: " Answers"
       form:
         back: "Back to Test"
         create: "Create new"
         edit: "Edit"
         question: "question"
+        update: "Update"
     answers:
       create:
         success: "Answer successfully created"
@@ -179,16 +215,27 @@ en:
         correct: "Correct"
         back: "Back to Question"
       answer:
-        show: "Show"
-        edit: "Edit"
-        delete: "Delete"
+        show: " Show"
+        edit: " Edit"
+        delete: " Delete"
       back_button:
         back: "Back to Question"
+      form:
+        back: "Back"
+        create: "Create"
+        update: "Update"
   pages:
     index:
+      upgrade: "Improve Yourself"
+      header: "admin panel"
+      welcome: "Welcome"
+      logout: "Logout"
+      login: "Log in"
+      apanel: "Admin panel | TestGuru"
       create: "New Test"
       view: "Tests list"
       gist: "Gists list"
+      start_test: "Start Test"
       title: "Online Tricky Testing Program"
       benefits: "Benefits:"
       goal: "The goal of the project is to create an application for writing tests, testing and assessing knowledge."
@@ -203,3 +250,10 @@ en:
   test_mailer:
     completed_test:
       subject: "You just completed the TestGuru test"
+
+  feedbacks:
+    form:
+      back: "Back"
+      send: "Send"
+    new:
+      send_feedback: "Create new feedback"

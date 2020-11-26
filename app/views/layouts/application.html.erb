@@ -12,23 +12,15 @@
   </head>
 
   <body>
-
-    <%= render 'admin/nav' %>
-    
     <div class="container">
-      <div class="container-lg">
-        <div class="row justify-content-center mt-3">
-          <div class='col-12'>
+      <div class="row d-flex justify-content-center">
 
-            <%= render 'shared/flash', flash: flash %>
+        <%= render 'shared/flash', flash: flash %>
 
-            <%= yield %>
-          </div>
-        </div>
+          <%= yield %>
+
+        <%= render 'shared/footer' %>
       </div>
     </div>
-
-      <%= render 'shared/footer' %>
-
   </body>
 </html>
