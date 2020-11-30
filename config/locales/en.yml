@@ -40,6 +40,7 @@ en:
       gist: "View Gist"
       feedback: "Feedback"
       create_test: "Create Test"
+      badges_list: "Archivement"
       start_test: "Start Test"
       welcome_admin: "Welcome to Admin Panel"
       welcome_user: "Welcome to Test Guru"
@@ -69,7 +70,25 @@ en:
                                 Users can also create their own tests.'
       project_description: 'Project created at the school '
 
+  rules_array:
+    first_attemp: "1. Passed the test on the first try"
+    all_category_one: "2. Passed all tests in the Frontend category"
+    all_category_two: "3. Passed all tests in the Backend category"
+    all_level_medium: "4. Passed all intermediate level tests"
+    all_tests: "5. Passed all tests"
 
+  badges:
+    index:
+      user_badges: "Awards received"
+      all_badges: "Available rewards"
+
+    destroy:
+      success: "Badge successfully deleted."
+    update:
+      success: "Badge successfully updated."
+    create:
+      success: "Badge successfully created."
+      not_success: "Badge creation failed."
 
   tests:
     index:
@@ -104,6 +123,36 @@ en:
     gist_question_service:
       gist_decsription: "Question from test: %{test}"
 
+  badges:
+    index:
+      header: "Archivements"
+      go_back: "Back"
+      new_badge: "Create"
+      badge_image: "Icon"
+      badge_title: "Description"
+      badge_rule: "Rule"
+      badge_action: "Actions"
+      badge_show: "View"
+      badge_edit: "Edit"
+      badge_delete: "Delete"
+      badge_confirm: "Are you sure?"
+      user_badges: "Awards achieved"
+      all_badges: "All Available Rewards"
+      badge_back: "Back"
+      start_test: "Start test"
+    show:
+      badge_title: "Archivement"
+      badge_new: "Create"
+      badge_edit: "Edit"
+      badge_back: "Back"
+      badge_image: "Icon"
+      badge_body: "Description"
+      badge_rule: "Rule"
+      badge_actions: "Actions"
+
+    edit:
+      edit_header: "Archivement"
+
   admin:
     gists:
       index:
@@ -122,18 +171,28 @@ en:
     base:
       admin_require:
         norights: "You are not an admin."
+    badges:
+      index:
+        header: "Archivements"
+      destroy:
+        success: "%{badge} was successfully deleted."
+      update:
+        success: "%{badge} was successfully updated."
+      create:
+        success: "%{badge} was successfully created."
+        not_success: "%{badge} was unsuccessfully created."
     tests:
       destroy:
-        success: "Test was successfully deleted."
+        success: "%{badge} was successfully deleted."
       update:
-        success: "Test was successfully updated."
+        success: "%{badge} was successfully updated."
       update_inline:
         success: "Name test was successfully updated."
       form_inline:
         submit: "Ok"
       create:
-        success: "Test was successfully created."
-        not_success: "Test was unsuccessfully created."
+        success: "%{badge} was successfully created."
+        not_success: "%{badge} was unsuccessfully created."
       show:
         title: "Test"
         edit: "Edit"
@@ -151,6 +210,7 @@ en:
         actions: "Actions"
         create: "New test"
         gist: "Gists list"
+        new_test: "New Test"
       new:
         header: "Create new Test"
       edit:
@@ -224,6 +284,22 @@ en:
         back: "Back"
         create: "Create"
         update: "Update"
+    badges:
+      new:
+        header: "New achievement"
+      show:
+        image: "Icon"
+        body: "Description"
+        rule: "Rule"
+        actions: "Actions"
+        back: "Back"
+        new_badge: "New badge"
+      form:
+        back: "Back"
+        submit: "Submit"
+        image: "Image"
+        rule: "Rule"
+        new_title: "Achievement name"
   pages:
     index:
       upgrade: "Improve Yourself"

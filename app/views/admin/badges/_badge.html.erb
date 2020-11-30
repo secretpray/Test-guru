@@ -1,0 +1,21 @@
+<tr class="tr" >
+
+  <td class="align-middle"><%= image_tag badge.image, alt: 'Description', style: 'display: block; width: 70px; margin: auto;' %></td>
+  <td class="align-middle"><%= badge.title %></td>
+  <td class="align-middle text-center"><%= badge.rule %></td>
+  <td class="align-middle text-center wp-120 p10-15">
+    <%= link_to t('badges.index.badge_show'), admin_badge_path(badge), class: 'btn btn-light custom-b1', id: '' %>
+  </td>
+  <td class="align-middle text-center wp-120 p10-15">
+    <%= link_to t('badges.index.badge_edit'), edit_admin_badge_path(badge), class: 'btn btn-light custom-b1', id: 'b_edit' %>
+  </td>
+
+ <td class="align-middle text-center wp-120">
+    <%= link_to t('badges.index.badge_delete'),
+                admin_badge_path(badge),
+                method: :delete,
+                data: { confirm: t('badges.index.badge_confirm') },
+                class: 'btn btn-light custom-b1',
+                id: 'b_delete' %>
+  </td>
+</tr>

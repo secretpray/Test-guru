@@ -9,6 +9,7 @@
 
 <% if @test_passage.success? %>
 
+  <%= render "badge" if @badges %>
 	<%= render 'shared/sertificate' %>
 
 <% else %>

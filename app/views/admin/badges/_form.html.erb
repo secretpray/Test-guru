@@ -1,0 +1,32 @@
+
+
+<%= form_with model: [:admin, @badge], html: { multipart: true }, local: true do |f| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <div class="form-group mt-3 tests-form-text-field">
+    <%= f.label :title, class: "hidden" %><br />
+    <%= f.text_field :title, id: :test_title, size: '20x1', class: 'form-control', placeholder: t('.new_title') %>
+  </div>
+
+  <div class="form-group mt-4">
+    <%= f.label :image, t('.image'), class: "mb-2 ml-3 op-80" %>
+    <%= f.collection_select(:image, Badge.images, :to_s, :to_s, { prompt: true }, { class: 'form-control input-group-prepend' }) %>
+  </div>
+
+  <div class="form-group mt-4">
+    <%= f.label :rule, t('.rule'), class: "mb-2 ml-3 op-80" %>
+    <%= f.collection_select(:rule, Badge::RULES, :to_i, :to_s, { prompt: true }, { class: 'form-control input-group-prepend' }) %>
+  </div>
+
+  <div class="row">
+  <div class="btn-group mt-4 mb-1" role="group" aria-label='test create group'>
+
+    <button type="button" class="btn btn-light mr-2" id="back-tests">
+      <%= link_to t('.back'), admin_badges_path %>
+    </button>
+
+    <button type="submit" class="btn btn-light ml-2" id="create-test">
+      <%= t('.submit') %>
+    </button>
+
+<% end %>

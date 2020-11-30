@@ -41,6 +41,7 @@ ru:
       gist: "Список Gist"
       feedback: "Пожелания"
       create_test: "Создать Test"
+      badges_list: "Достижения"
       start_test: "Старт Test"
       welcome_admin: "Приветствую в Admin Panel"
       welcome_user: "Приветствую Test Guru"
@@ -71,6 +72,25 @@ ru:
                                 Позволяет пользовавателям проходить тесты.
                                 Также есть возможность моздавать тесты.'
       project_description: 'Проект создан для для онлайн-школы '
+
+  rules_array:
+    first_attemp: "1. Тест пройден с первой попытки"
+    all_category_one: "2. Пройдены все тесты из категории Frontend"
+    all_category_two: "3. Пройдены все тесты из категории Backend"
+    all_level_medium: "4. Пройдены все тесты среднего уровня"
+    all_tests: "5. Пройдены все тесты"
+
+  badges:
+    index:
+      user_badges: "Получено наград"
+      all_badges: "Доступные награды"
+    destroy:
+      success: "Badge успешно удален."
+    update:
+      success: "Badge успешно обновлен."
+    create:
+      success: "Badge успешно создан."
+      not_success: "Badge не сохранен."
 
   tests:
     index:
@@ -106,6 +126,36 @@ ru:
     gist_question_service:
       gist_decsription: "Вопрос по тесту: %{test}"
 
+  badges:
+    index:
+      header: "Достижения"
+      go_back: "Назад"
+      new_badge: "Создать"
+      badge_image: "Иконка"
+      badge_title: "Описание"
+      badge_rule: "Правило"
+      badge_action: "Действия"
+      badge_show: "Просмотр"
+      badge_edit: "Изменить"
+      badge_delete: "Удалить"
+      badge_confirm: "Вы уверены?"
+      user_badges: "Получено наград"
+      all_badges: "Доступные награды"
+      badge_back: "Вернуться"
+      start_test: "Пройти тест"
+
+    show:
+      badge_title: "Достижение"
+      badge_new: "Создать"
+      badge_edit: "Изменить"
+      badge_back: "Назад"
+      badge_image: "Иконка"
+      badge_body: "Описание"
+      badge_rule: "Правило"
+      badge_actions: "Действия"
+    edit:
+      edit_header: "Достижение"
+
   admin:
     gists:
       index:
@@ -124,18 +174,28 @@ ru:
     base:
       admin_require:
         norights: "У вас недостаточно прав."
+    badges:
+      index:
+        header: "Достижения"
+      destroy:
+        success: "%{badge} успешно удален"
+      update:
+        success: "%{badge} успешно обновлен."
+      create:
+        success: "%{badge} успешно создан."
+        not_success: "Badge не сохранен."
     tests:
       destroy:
-        success: "Тест успешно удален."
+        success: "%{badge} успешно удален."
       update:
-        success: "Тест успешно обновлен."
+        success: "%{badge} успешно обновлен."
       update_inline:
         success: "Имя теста обновлено."
       form_inline:
         submit: "Ok"
       create:
-        success: "Тест успешно создан."
-        not_success: "Тест не сохранен!"
+        success: "%{badge} успешно создан."
+        not_success: "%{badge} не сохранен!"
       show:
         title: "Тест"
         edit: "Изменить"
@@ -153,6 +213,7 @@ ru:
         actions: "Действия"
         create: "Новый тест"
         gist: "Список gist"
+        new_test: "Новый тест"
       edit:
         header: "Редактирование теста: %{title}"
       new:
@@ -226,6 +287,22 @@ ru:
         back: "Назад"
         create: "Создать"
         update: "Обновить"
+    badges:
+      new:
+        header: "Новое достижение"
+      show:
+        image: "Иконка"
+        body: "Описание"
+        rule: "Правило"
+        actions: "Действия"
+        back: "Назад"
+        new_badge: "Новый бэйдж"
+      form:
+        back: "Назад"
+        submit: "Создать"
+        image: "Изображение"
+        rule: "Правило"
+        new_title: "Имя достижения"
   pages:
     index:
       upgrade: "Стань лучше"

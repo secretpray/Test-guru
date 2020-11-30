@@ -1,0 +1,41 @@
+<%= render 'shared/sidebar' %>
+
+<div class="menu-icon" id="menu-icon-tl" >
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<div class="wrapper-card">
+  <div class="card border-secondary mb-3 mt-5" id="tests-card">
+    <div class="tests-card-header text-center text-uppercase font-weight-bold mt-3">
+      <%= t('badges.show.badge_title') %>
+    </div>
+
+    <div class="card-body text-secondary">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item mt-4" id="background-neu">
+          <strong class="text-center"><%= t('badges.show.badge_image') %>:</strong></br>
+          <%= image_tag @badge.image, alt: 'Description', style: 'display: block-inline; width: 70px; margin: 5px 38%;' %>
+        </li>
+        <li class="list-group-item mt-3" id="background-neu">
+          <strong><%= t('badges.show.badge_body') %>:</strong>
+           <span><%= @badge.title %></span>
+        </li>
+        <li class="list-group-item mt-3" id="background-neu">
+          <strong><%= t('badges.show.badge_rule') %>:</strong>
+           <span>#<%= @badge.rule %></span>
+        </li>
+      </ul>
+      <div class="row justify-content-center">
+        <button type="button" class="col-md-3 btn btn-neu-card mt-4 mb-3" id="hover-red" >
+          <%= link_to t('badges.show.badge_back'), admin_badges_path %>
+        </button>
+        <button type="button" class="col-md-3 btn btn-neu-card mt-4 mb-3">
+          <%= link_to t('badges.show.badge_edit'), edit_admin_badge_path(@badge) %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

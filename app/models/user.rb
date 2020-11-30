@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :feedbacks
+  has_many :users_badges, dependent: :destroy
+  has_many :badges, through: :users_badges
 
   validates :first_name, :last_name, :email, :login, presence: true
   validates :login, presence: true, uniqueness: true

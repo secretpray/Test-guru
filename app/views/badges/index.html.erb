@@ -1,0 +1,41 @@
+<%= render 'shared/sidebar' %>
+
+<div class="menu-icon" id="menu-icon-tl" >
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<div class="wrapper-card">
+  <div class="card border-secondary mb-3 mt-5" id="tests-card">
+    <div class="tests-card-header text-center text-uppercase font-weight-bold mt-3">
+      <%= t('badges.index.user_badges') %>
+    </div>
+
+    <table class="table table-hover mt-4">
+      <%= render partial: 'badges/badge', collection: @current_badges %>
+    </table>
+  </div>
+
+<div class="wrapper-card">
+  <div class="card border-secondary mb-3 mt-5" id="tests-card">
+    <div class="tests-card-header text-center text-uppercase font-weight-bold mt-3">
+      <%= t('badges.index.all_badges') %>
+    </div>
+
+    <table class="table table-hover">
+      <%= render partial: 'badges/badge', collection: @badges %>
+    </table>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <button type="button" class="col-md-3 btn btn-neu-card mt-4 mb-3" id="hover-red" >
+    <%= link_to t('.badge_back'), root_path %>
+  </button>
+  <button type="button" class="col-md-3 btn btn-neu-card mt-4 mb-3">
+    <%= link_to t('.start_test'), tests_path %>
+  </button>
+</div>
+</div>
+

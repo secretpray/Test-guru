@@ -11,9 +11,9 @@ class Test < ApplicationRecord
   validates :level, presence: true,
                     numericality: { only_integer: true, greater_than_or_equal_to: 0 } # unless less_than: 0
 
-  scope :easy, -> { by_level(0..1) } 
-  scope :medium, -> { by_level(2..4) }
-  scope :hard, -> { by_level(5..Float::INFINITY) } 
+  scope :easy, -> { where(level: 0..1) } 
+  scope :medium, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) } 
   scope :by_level, -> (level) { where(l"level = ?", level) }
   scope :by_category, -> (category) { joins(:category).where(categories: {title: category.to_s}) }
 
