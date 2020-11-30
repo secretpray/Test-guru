@@ -153,6 +153,8 @@ ru:
       badge_body: "Описание"
       badge_rule: "Правило"
       badge_actions: "Действия"
+    edit:
+      edit_header: "Достижение"
 
   admin:
     gists:

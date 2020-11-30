@@ -150,6 +150,9 @@ en:
       badge_rule: "Rule"
       badge_actions: "Actions"
 
+    edit:
+      edit_header: "Archivement"
+
   admin:
     gists:
       index:
