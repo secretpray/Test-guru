@@ -50,6 +50,6 @@ end
 User.all.each do |user|
   current_user = user
   Test.all.each do |test|
-    TestPassage.find_or_create_by(user_id: current_user.id, test_id: test.id, current_question_id: rand(1..Question.count))
+    TestPassage.find_or_create_by(user_id: current_user.id, test_id: test.id, current_question_id: rand(1..Question.count), completed: false)
   end
 end

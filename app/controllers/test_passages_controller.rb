@@ -1,19 +1,28 @@
 class TestPassagesController < ApplicationController
 
   before_action :set_test_passage, only: %i[show result update gist]
+  before_action :set_users_badge, only: :update
 
   def show
     redirect_to tests_path, alert: t('.empty_tests') unless @test_passage.test.questions.any?
   end
 
-  def result;  end
+  def result
+    @badges = Badge.where(rule: params[:badges]) if @test_passage.success?
+  end
 
   def update
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
+      if @test_passage.success?
+        @test_passage.update(completed: true)
+        @rules_array = @users_badge.check_all_rules(current_user, @test_passage.test_id.to_i)
+        current_user.badges.push(Badge.where(rule:[@rules_array]))
+      end
+
       TestsMailer.completed_test(@test_passage).deliver_now
-      redirect_to result_test_passage_path(@test_passage)
+      redirect_to result_test_passage_path(@test_passage, badges: @rules_array)
     else
       render :show
     end
@@ -43,6 +52,10 @@ class TestPassagesController < ApplicationController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def set_users_badge
+     @users_badge = UsersBadge.new
   end
 end
 

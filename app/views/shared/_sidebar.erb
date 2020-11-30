@@ -34,15 +34,19 @@
 
   <% if user_signed_in? && current_user.admin? %>
 
-    <button class="btn-neus mt-2">
+    <button class="btn-neus mt-1">
       <%= link_to t('pages.index.view'), admin_tests_path %>
     </button>
 
-    <button class="btn-neus mt-2">
+    <button class="btn-neus mt-1">
+      <%= link_to t('.badges_list'), admin_badges_path %>
+    </button>
+
+    <button class="btn-neus mt-1">
       <%= link_to t('.gist'), admin_gists_path %>
     </button>
 
-    <button class="btn-neus mt-2">
+    <button class="btn-neus mt-1">
       <%= link_to t('.create_test'), new_admin_test_path %>
     </button>
 
@@ -50,15 +54,19 @@
 
   <% if user_signed_in? %>
     <div>
-      <button class="btn-neus mt-2">
+      <button class="btn-neus mt-1">
         <%= link_to t('.start_test'), tests_path %>
       </button>
 
-      <button class="btn-neus mt-2">
+      <button class="btn-neus mt-1">
+        <%= link_to t('.badges_list'), badges_path %>
+      </button>
+
+      <button class="btn-neus mt-1">
         <%= link_to t('.feedback'), new_feedback_path %>
       </button>
       
-      <button class="btn-neu mt-5">
+      <button class="btn-neu mt-2">
         <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
       </button>
     </div>

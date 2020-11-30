@@ -46,6 +46,9 @@
       <div class="d-flex justify-content-center">
 
         <button type="button" class='op-80' id="btn-admin-pages">
+          <%= link_to t('shared.sidebar.badges_list'), admin_badges_path %>
+        </button>
+        <button type="button" class='op-80' id="btn-admin-pages">
           <%= link_to t('.gist'), admin_gists_path %>
         </button>
         <button type="button" class='op-80' id="btn-admin-pages">
@@ -53,9 +56,6 @@
         </button>
         <button type="button" class='op-80' id="btn-admin-pages">
           <%= link_to t('.create'), new_admin_test_path %>
-        </button>
-        <button type="button" class='op-80' id="btn-admin-pages">
-          <%= link_to t('.start_test'), tests_path %>
         </button>
 
       </div>
