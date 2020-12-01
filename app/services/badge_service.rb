@@ -34,19 +34,32 @@ class BadgeService
   end
 
   def all_category_one?
-    (Test.by_category('frontend') - @current_user.tests.includes(:test_passages).where( test_passages: { completed: true })).empty?
+    test_category = Test.by_category('frontend')
+    user_test_category = @current_user.tests.includes(:test_passages)
+                         .where( test_passages: { completed: true })
+    (test_category - user_test_category).empty?
   end
 
   def all_category_two?
-    (Test.by_category('backend') - @current_user.tests.includes(:test_passages).where( test_passages: { completed: true })).empty?
+    test_category = Test.by_category('backend')
+    user_test_category = @current_user.tests.includes(:test_passages)
+                         .where( test_passages: { completed: true })
+    (test_category - user_test_category).empty?
   end
 
   def all_level_medium?
-    (Test.medium - @current_user.tests.where(level: 2..4).includes(:test_passages).where(test_passages: {completed: true})).empty?
+    test_level = Test.medium
+    user_test_level = @current_user.tests.where(level: 2..4)
+                      .includes(:test_passages)
+                      .where(test_passages: {completed: true})
+    (test_level - user_test_level).empty?
   end
 
   def all_tests?
-    (Test.all - @current_user.tests.includes(:test_passages).where(test_passages: {completed: true})).empty?
+    all_test = Test.all
+    current_user_test = @current_user.tests.includes(:test_passages)
+                        .where(test_passages: {completed: true})
+    (all_test - current_user_test).empty?
   end
 
 end

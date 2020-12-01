@@ -1,4 +1,6 @@
 <tr>
   <td class="align-middle"><%= badge.title %></td>
-  <td class="align-middle col-md-3"><%= image_tag badge.image, size: "40x40" %></td>
+  <td class="align-middle col-md-3"><%= image_tag badge.image, size: "40x40" %>
+    <%= current_user.badges.where(title: badge.title).count %>
+  </td>
 </tr>
