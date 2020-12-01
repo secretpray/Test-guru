@@ -15,7 +15,7 @@
 
   <div class="form-group mt-4">
     <%= f.label :rule, t('.rule'), class: "mb-2 ml-3 op-80" %>
-    <%= f.collection_select(:rule, Badge::RULES, :to_i, :to_s, { prompt: true }, { class: 'form-control input-group-prepend' }) %>
+    <%= f.collection_select(:rule, select_rules, :to_i, :to_s, { prompt: true }, { class: 'form-control input-group-prepend' }) %>
   </div>
 
   <div class="row">

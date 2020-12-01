@@ -9,13 +9,6 @@ class Badge < ApplicationRecord
   validates :title, presence: true
   validates :image, presence: true
 
-  RULES = [
-          I18n.t('.rules_array.first_attemp'),
-          I18n.t('.rules_array.all_category_two'),
-          I18n.t('.rules_array.all_category_one'),
-          I18n.t('.rules_array.all_level_medium'),
-          I18n.t('.rules_array.all_tests')
-        ]
 
   def self.images
     images_path = 'app/assets/images/'

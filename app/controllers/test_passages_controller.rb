@@ -7,9 +7,7 @@ class TestPassagesController < ApplicationController
     redirect_to tests_path, alert: t('.empty_tests') unless @test_passage.test.questions.any?
   end
 
-  def result
-    @badges = Badge.where(rule: params[:badges]) if @test_passage.success?
-  end
+  def result; end
 
   def update
     @test_passage.accept!(params[:answer_ids])
@@ -17,12 +15,11 @@ class TestPassagesController < ApplicationController
     if @test_passage.completed?
       if @test_passage.success?
         @test_passage.update(completed: true)
-        @rules_array = @users_badge.check_all_rules(current_user, @test_passage.test_id.to_i)
-        current_user.badges.push(Badge.where(rule:[@rules_array]))
+        flash_options = BadgeService.new(@test_passage).call
       end
 
       TestsMailer.completed_test(@test_passage).deliver_now
-      redirect_to result_test_passage_path(@test_passage, badges: @rules_array)
+      redirect_to result_test_passage_path(@test_passage, badges: @rules_array), flash_options
     else
       render :show
     end
