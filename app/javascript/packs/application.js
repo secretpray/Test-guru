@@ -14,6 +14,7 @@ require("utilities/form_inline")
 require("utilities/sorting")
 require("utilities/progress_bar")
 require("utilities/auto_hide_flash")
+require("utilities/timer")
 
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'

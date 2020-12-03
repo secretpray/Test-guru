@@ -201,6 +201,7 @@ ru:
       show:
         title: "Тест"
         edit: "Изменить"
+        edit_test: "Изменить Тест"
         question: "Вопрос"
         answers: "Ответов"
         actions: "Действия"
@@ -217,7 +218,8 @@ ru:
         gist: "Список gist"
         new_test: "Новый тест"
       edit:
-        header: "Редактирование теста: %{title}"
+        header: "Редактирование теста"
+        heade: "Редактирование теста: %{title}"
       new:
         header: "Создание нового Теста"
       test:
@@ -225,6 +227,7 @@ ru:
         editor: "Изменить"
         edit: "Изменить"
         delete: "Удалить"
+        confirm: "Уверены что хотите удалить?"
       form:
         back: "Назад"
         create: "Создать тест"

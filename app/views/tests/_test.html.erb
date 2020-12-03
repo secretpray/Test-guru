@@ -3,6 +3,7 @@
   <td class="cell" style="text-align: left"><%= test_level(test) %></td>
   <td class="cell"><%= test.category.title %>
   <td class="cell" style="text-align: center"><%= test.questions.count %></td>
+  <td class="cell" style="text-align: center"><%= test.timer %></td>
   <td class="cell" style="text-align: center">
     <% if test.questions.any? %>
       <%= button_to t('.start'), start_test_path(test), class: "btn ml-1", id: "start-button-tp" %>

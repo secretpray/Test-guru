@@ -196,6 +196,7 @@ en:
       show:
         title: "Test"
         edit: "Edit"
+        edit_test: "Edit Test"
         question: "Question"
         answers: "Q-ty answers"
         actions: "Actions"
@@ -214,12 +215,14 @@ en:
       new:
         header: "Create new Test"
       edit:
-        header: "Edit test: %{title}"
+        header: "Edit test"
+        heade: "Edit test: %{title}"
       test:
         show: "Show"
         editor: "Edit"
         edit: "Edit"
         delete: "Delete"
+        confirm: "Are you sure?"
       form:
         back: "Back"
         create: "Create test"

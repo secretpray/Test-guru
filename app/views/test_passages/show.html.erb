@@ -6,51 +6,58 @@
   <span></span>
 </div>
 
-<!-- HTML/CSS progress bar -->
-<div class="d-inline-flex justify-content-center mb-4">
-  <%= render 'diagram_css' %>
-  <%= render 'diagram_js' %>
-</div>
+<div class="row">
+  <!-- HTML/CSS progress bar -->
+  <div class="d-inline-flex justify-content-center mb-4">
+    <%= render 'diagram_css' %>
+    <%= render 'diagram_js' %>
+  </div>
 
-
-<div class="col-12 justify-content-center test-passage-card">
-  <div class="card border-secondary mb-3" id="card-test-passage">
-    <div class="card-header text-center" style="height: 100% !important; padding: 0; margin: 0;">
-
-    <!-- Javascript progress bar -->
-    <%= render 'progress_bar' %>
-
-
-    </div>
-      <div class="card-body text-secondary text-center">
-       (<%= t('.question') %> <%= @test_passage.current_question_number %> <%= t('.from') %> <%= @test_passage.test.questions.count %>)
-      </div>
-
-      <div class="card-text">
-        <div class="ml-4 mt-3 mb-3 font-weight-bold"><%= @test_passage.current_question.body %></div>
-          <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-            <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers.shuffle, :id, :body, include_hidden: false do |b| %>
-            <div class="form-group form-check mt-3">
-              <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-              <%= b.label %>
-            </div>
-            <% end %>
-
-          <div class="btn-group d-flex justify-content-center">
-
-            <button class="btn-neu-submit">
-              <%= link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post, class: "btn btn-warning", id: "gist-button-tp" %>
-            </button>
-
-            <button class="btn-neu-submit">
-              <%= form.submit t('.next'), class: "btn btn-warning", id: "next-button-tp" %>
-            </button>
-          </div>
-        
-         <% end %>
-
-      </div>
+  <div class="div-timer neu-h1-title">
+    <% if @test_passage.test.timer.present? %>
+      <%= t('.timer') %> <%= content_tag :span, '', class: 'timer', data: { timer: @test_passage.time_left } %>
+    <% end %>
   </div>
 </div>
 
+<div class="row justify-content-center">
+  <div class="col-12 justify-content-center test-passage-card">
+    <div class="card border-secondary mb-3" id="card-test-passage">
+      <div class="card-header text-center" style="height: 100% !important; padding: 0; margin: 0;">
 
+      <!-- Javascript progress bar -->
+      <%= render 'progress_bar' %>
+
+
+      </div>
+        <div class="card-body text-secondary text-center">
+         (<%= t('.question') %> <%= @test_passage.current_question_number %> <%= t('.from') %> <%= @test_passage.test.questions.count %>)
+        </div>
+
+        <div class="card-text">
+          <div class="ml-4 mt-3 mb-3 font-weight-bold"><%= @test_passage.current_question.body %></div>
+            <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+              <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers.shuffle, :id, :body, include_hidden: false do |b| %>
+              <div class="form-group form-check mt-3">
+                <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+                <%= b.label %>
+              </div>
+              <% end %>
+
+            <div class="btn-group d-flex justify-content-center">
+
+              <button class="btn-neu-submit">
+                <%= link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post, class: "btn btn-warning", id: "gist-button-tp" %>
+              </button>
+
+              <button class="btn-neu-submit">
+                <%= form.submit t('.next'), class: "btn btn-warning", id: "next-button-tp" %>
+              </button>
+            </div>
+        
+           <% end %>
+
+        </div>
+    </div>
+  </div>
+</div>

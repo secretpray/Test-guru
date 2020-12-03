@@ -12,13 +12,14 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids])
 
-    if @test_passage.completed?
+    if @test_passage.completed? || @test_passage.check_timer?
       if @test_passage.success?
         @test_passage.update(completed: true)
         flash_options = BadgeService.new(@test_passage).call
       end
 
       TestsMailer.completed_test(@test_passage).deliver_now
+
       redirect_to result_test_passage_path(@test_passage, badges: @rules_array), flash_options
     else
       render :show
@@ -54,5 +55,5 @@ class TestPassagesController < ApplicationController
   def set_users_badge
      @users_badge = UsersBadge.new
   end
-end
 
+end
