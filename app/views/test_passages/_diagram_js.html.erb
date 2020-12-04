@@ -1,10 +1,8 @@
-<div class="container_diagramm ml-4">
+<div class="container_diagramm ml-3">
   <div class="card_diagramm">
     <div class="box_diagramm">
       <div class="percent_circle_diagramm "
-          data-timer="<%= @test_passage.time_left %>"
-          data-current-question-index="<%= @test_passage.current_question_index %>"
-          data-questions-count="<%= @test_passage.questions_count %>">
+          data-timer="<%= @test_passage.time_left %>">
         <svg>
           <circle cx="70" cy="70" r="70"></circle>
           <circle cx="70" cy="70" r="70" class="percent_circle"></circle>
@@ -13,7 +11,9 @@
           <h2><span class="percent_text"></span><span class="percent-only">%</span></h2>
         </div>
       </div>
-      <div class="text_diagramm_timer">TIMER: <span class="timer"></span>
+      <div class="text_diagramm_timer">
+        TIMER:
+        <span class="timer"></span>
       </div>
     </div>
   </div>
