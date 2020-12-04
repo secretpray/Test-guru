@@ -1,12 +1,20 @@
-<div class="row justify-content-center mt-3">
-  <div class="col col-md-4">
-    <div class="card border-secondary mb-3 mt-5" style="max-width: 24rem;">
-      <div class="card-header text-center"><%= t('.header', title: @test.title) %></div>
+<%= render 'shared/sidebar' %>
+
+<div class="menu-icon" id="menu-icon-tl" >
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<div class="wrapper-card">
+  <div class="card border-secondary mb-3 mt-5" id="tests-card">
+    <div class="tests-card-header text-center text-uppercase font-weight-bold mt-3">
+      <%= t('.header') %>
+    </div>
       <div class="card-body text-secondary">
         <div class="card-text">
           <%= render 'form' %>
         </div>
       </div>
-    </div>
   </div>
 </div>

@@ -15,10 +15,14 @@ class BadgeService
   end
 
   def call
-    @result = check_trophy!
-    if @result.any?
-      @current_user.badges.push(Badge.where(rule:[@result]))
-       { notice: "Вы получили награду!" }
+    @new_trophy_user = check_trophy!
+    if @new_trophy_user.any?
+      @all_trophy_user = @current_user.badges.uniq.map { |badge| badge.rule.to_i  }
+      add_trophy_user = @new_trophy_user - @all_trophy_user
+
+      @current_user.badges.push(Badge.where(rule:[add_trophy_user]))
+      notice_trophy = Badge.where(rule: add_trophy_user).pluck(:title)
+      notice = ApplicationController.new.format_flash(notice_trophy)
     end
   end
 
@@ -26,6 +30,7 @@ class BadgeService
     @badges = HASH_RULES.select do |rule|
       send("#{rule.keys.join}?")
     end
+
     @badges.map { |badge| badge.values.join.to_i }
   end
 
@@ -63,3 +68,4 @@ class BadgeService
   end
 
 end
+

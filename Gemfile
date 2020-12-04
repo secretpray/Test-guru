@@ -22,6 +22,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # AUTH
 gem 'devise', '~> 4.0'
 
+# DEBUGGER
+gem 'pry', '~> 0.13.1'
+
 # UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.0.0.alpha1'

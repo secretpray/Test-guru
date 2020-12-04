@@ -37,6 +37,9 @@
     <button type="button" class="col-md-3 btn btn-neu-card mt-4 mb-3" id="hover-red" >
       <%= link_to t('test_passages.result.back'), admin_tests_path %>
     </button>
+    <button type="button" class="col-md-3 btn btn-neu-card mt-4 mb-3" >
+      <%= link_to t('.edit_test'), edit_admin_test_path(@test) %>
+    </button>
     <button type="button" class="col-md-3 btn btn-neu-card mt-4 mb-3">
       <%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
     </button>

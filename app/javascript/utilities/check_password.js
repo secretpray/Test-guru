@@ -1,8 +1,10 @@
 document.addEventListener('turbolinks:load', function() {
   let titleInput = document.getElementById('test_title')
   let levelInput= document.getElementById('test_level')
+  let timerInput= document.getElementById('test_timer')
   let titleLabel = document.querySelector('.title-label')
   let levelLabel = document.querySelector('.level-label')
+  let timerLabel = document.querySelector('.timer-label')
   let forgotPasswordInput = document.getElementById('user_email')
   let forgotPasswordLabel = document.querySelector('.forgot-password-label')
   let feedbackTitleInput = document.getElementById('feedback_title')
@@ -13,18 +15,35 @@ document.addEventListener('turbolinks:load', function() {
   let submitButton = document.querySelector('.signin-button')
 
   // Валидация форм создания теста
-  hideLabel(titleInput, titleLabel)
+  if (titleInput && titleLabel) {
+    hideLabel(titleInput, titleLabel)
+  }
+  if (levelInput) {
+    hideNumberIntervalLabel(levelInput, levelLabel, 0, 100)
+  }
+  if (timerInput) {
+    hideNumberIntervalLabel(timerInput, timerLabel, 0, 60)
+  }
 
   // Валидация формы создания отзыва
-  hideLabel(feedbackTitleInput, feedbackTitleLabel)
-  hideLabel(feedbackBodyInput, feedbackBodyLabel)
+  if (feedbackTitleInput) {
+    hideLabel(feedbackTitleInput, feedbackTitleLabel)
+  }
+  if (feedbackBodyInput) {
+    hideLabel(feedbackBodyInput, feedbackBodyLabel)
+  }
 
 
   // Валидация формы восстановления пароля
-  hideLabel(forgotPasswordInput, forgotPasswordLabel)
+  if (forgotPasswordInput) {
+    hideLabel(forgotPasswordInput, forgotPasswordLabel)
+  }
 
   function hideLabel(input, label) {
     if (input) {
+      if (input.value != "") {
+      label.classList.add('hidden');
+      }
       input.addEventListener('focus', function() {
         label.classList.add('hidden');
       });
@@ -36,18 +55,26 @@ document.addEventListener('turbolinks:load', function() {
     }
   }
 
-  if (levelInput) {
-  levelInput.addEventListener('focus', function() {
-    levelLabel.classList.add('hidden');
-  });
-  levelInput.addEventListener('blur', function() {
-    if (+levelInput.value < 0 || +levelInput.value > 100 ) {
-      levelInput.value = '';
-      levelLabel.classList.remove('hidden');
-    } else {
-      levelLabel.classList.add('hidden');
+  function hideNumberIntervalLabel(inputInterval, labelInterval, min, max) {
+    if (inputInterval) {
+      inputInterval.addEventListener('focus', function() {
+        labelInterval.classList.add('hidden');
+      });
+      inputInterval.addEventListener('input', validIntervalInput);
+      inputInterval.addEventListener('blur', validIntervalInput)
     }
-    });
+    function validIntervalInput() {
+      if (+inputInterval.value < min || +inputInterval.value > max ) {
+        inputInterval.value = '';
+        labelInterval.classList.remove('hidden');
+        inputInterval.style.backgroundColor = "#ffe7e7"
+        inputInterval.setAttribute("placeholder", `[${min}..${max}]`);
+      } else {
+        labelInterval.classList.add('hidden');
+        inputInterval.style.backgroundColor = "transparent"
+        inputInterval.setAttribute("placeholder", "");
+      }
+    }
   }
 
   if (control) {

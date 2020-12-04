@@ -46,6 +46,20 @@ class TestPassage < ApplicationRecord
     (440 - (440 * percent)  / 100)
   end
 
+  def time_left
+    (expires_at - Time.current).to_i
+  end
+
+  def stop!
+    self.current_question = nil
+  end
+
+  def time_over?
+    return unless test.timer.present?
+
+    expires_at < Time.current
+  end
+
   private
 
   def before_validation_set_next_question
@@ -67,4 +81,9 @@ class TestPassage < ApplicationRecord
       test.questions.order(:id).find_by('id > :id', id: current_question.id)
     end
   end
+
+  def expires_at
+    created_at + test.timer.minutes if test.timer.present?
+  end
+
 end

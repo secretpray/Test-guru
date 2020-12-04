@@ -18,17 +18,6 @@ document.addEventListener('turbolinks:load', function() {
     }, time);
   }
 
-  // function hideAlert(id, time) {
-  //   const alert = document.getElementById(id);
-  //    if (alert) {
-  //      window.setTimeout(function() {
-  //        alert.classList.add('fade-out')
-  //      }, 5000);
-  //    }
-  // }
-  // hideAlert('alert', 5000)
-  // hideAlert('errors', 7000)
-
   //Nav menu hide
   const sidebar = document.querySelector('.sidebar');
   const footer = document.querySelector('#page-footer');
