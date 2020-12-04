@@ -31,12 +31,27 @@ document.addEventListener('turbolinks:load', function() {
   if (diagramm) {
     const texts = diagramm.querySelectorAll('.percent_text')
     const circle = diagramm.querySelector('.percent_circle')
-    let currentQuestionIndex = diagramm.dataset.currentQuestionIndex
-    let questionsCount = diagramm.dataset.questionsCount
-    let percentage = Math.floor((currentQuestionIndex / questionsCount) * 100)
-    texts.forEach(node => (node.textContent = percentage));
+    const timer = document.querySelector('.timer')
+    const initialTimer = diagramm.dataset.timer
+    let timeLeft = diagramm.dataset.timer
 
-    const circlePart = 440 - (440 * percentage) / 100;
-    circle.setAttribute('style', `stroke-dashoffset: ${circlePart};`);
+    setInterval(function() {
+      if (timeLeft > 0) {
+        timeLeft -= 1
+      } else {
+        alert(I18n.time_up)
+        document.querySelector('form').submit()
+      }
+
+      minute = parseInt(timeLeft / 60)
+      second = timeLeft % 60
+      formatSecond = second < 10 ? `0${second}` : second
+      resultTime = `${minute}:${formatSecond}`
+      let percentage = Math.round((timeLeft / initialTimer) * 100)
+      texts.forEach(node => (node.textContent = percentage));
+      timer.innerHTML = resultTime
+      const circlePart = 440 - (440 * percentage) / 100;
+      circle.setAttribute('style', `stroke-dashoffset: ${circlePart};`);
+    }, 1000)
   }
 })

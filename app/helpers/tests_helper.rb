@@ -11,16 +11,16 @@ module TestsHelper
     "#{action}:"
   end
 
-    def format_timer(test)
-    unless test.timer.nil?
+  # def format_timer(test)
+  #   unless test.timer.nil?
 
-      if test.timer <= 60
-        "00:" "%02d" % "#{test.timer / 60}"
-      else
-        test.timer * 60
-        "%02d" % "#{test.timer / 60}" + ":" "%02d" % "#{test.timer % 60}"
-      end
-    end
-  end
+  #     if test.timer <= 60
+  #       "00:" "%02d" % "#{test.timer / 60}"
+  #     else
+  #       test.timer * 60
+  #       "%02d" % "#{test.timer / 60}" + ":" "%02d" % "#{test.timer % 60}"
+  #     end
+  #   end
+  # end
 
 end

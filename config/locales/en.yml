@@ -31,6 +31,9 @@ en:
     select:
       prompt: "Select category..."
 
+  javascript:
+    time_up: "Time is over!"
+
   shared:
     sidebar:
       welcome: "Welcome"
@@ -122,6 +125,11 @@ en:
   services:
     gist_question_service:
       gist_decsription: "Question from test: %{test}"
+    badge_service:
+
+  flash:
+    one: "One award received: "
+    other: "Received %{count} awards: "
 
   badges:
     index:

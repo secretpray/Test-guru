@@ -32,6 +32,9 @@ ru:
     select:
       prompt: "Выберите категорию..."
 
+  javascript:
+    time_up: "Время вышло!"
+
   shared:
     sidebar:
       welcome: "Добро пожаловать"
@@ -127,6 +130,12 @@ ru:
     gist_question_service:
       gist_decsription: "Вопрос по тесту: %{test}"
     badge_service:
+
+  flash:
+    one: "Получена одна награда: "
+    few: "Получено %{count} награды: "
+    many: "Получено %{count} наград: "
+    other: "Получено %{count} награды: "
 
   badges:
     index:

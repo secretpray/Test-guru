@@ -54,7 +54,9 @@ class TestPassage < ApplicationRecord
     self.current_question = nil
   end
 
-  def check_timer?
+  def time_over?
+    return unless test.timer.present?
+
     expires_at < Time.current
   end
 
@@ -81,7 +83,7 @@ class TestPassage < ApplicationRecord
   end
 
   def expires_at
-    created_at + test.timer.minutes # if test.timer.present?
+    created_at + test.timer.minutes if test.timer.present?
   end
 
 end
