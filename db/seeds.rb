@@ -1,3 +1,4 @@
+Feedback.delete_all
 UsersBadge.delete_all
 Badge.delete_all
 Answer.delete_all
