@@ -13,13 +13,13 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids]) if params[:answer_ids]
 
     if @test_passage.completed? || check_timer
-      TestsMailer.completed_test(@test_passage).deliver_now
-      
       if @test_passage.success?
-        @test_passage.update(completed: true)
+        send_result_to_email
+
         flash_options = BadgeService.new(@test_passage).call
       end
 
+      send_result_to_email
       flash_options ||= {}
       redirect_to result_test_passage_path(@test_passage, badges: @rules_array), flash_options
     else
@@ -52,6 +52,13 @@ class TestPassagesController < ApplicationController
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
   end
+
+  def send_result_to_email
+    unless @test_passage.completed
+      @test_passage.update(completed: true)
+      TestsMailer.completed_test(@test_passage).deliver_now
+    end
+ end
 
   # def set_users_badge
   #    @users_badge = UsersBadge.new
