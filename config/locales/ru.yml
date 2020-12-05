@@ -101,7 +101,7 @@ ru:
       header: "Список тестов"
       title: "Название"
       level: "Уровень"
-      questions: "Кол-во вопросов"
+      questions: "Вопросов"
       category: "Категория"
     test:
       start: "Начать"
@@ -225,7 +225,7 @@ ru:
         level: "Уровень"
         category: "Категория"
         author: "Автор"
-        questions: "Кол-во вопросов"
+        questions: "Вопросов"
         actions: "Действия"
         create: "Новый тест"
         gist: "Список gist"

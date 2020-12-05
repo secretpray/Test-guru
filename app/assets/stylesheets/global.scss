@@ -189,6 +189,15 @@ opacity: 1;
  font-weight: 700;
 }
 
+#create-answer {
+  padding: 0 25px;
+}
+
+
+#badge-list {
+  width: 418px;
+}
+
 /* pages - index */
 #page-footer {
   background-color: #E8EFF5 !important;
@@ -1123,7 +1132,8 @@ input::-webkit-textfield-decoration-container {
 .logo-sidebar-index:hover,
 .logo-sidebar:hover,
 .logo-sign:hover {
-  content:url("logob.png");
+  content: asset-data-url("logob.png");
+  /*content:url("logob.png");*/
   opacity: .9;
   cursor: pointer;
   box-shadow: inset 5px 5px 5px #cbced1,
