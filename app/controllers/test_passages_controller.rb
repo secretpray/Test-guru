@@ -19,7 +19,6 @@ class TestPassagesController < ApplicationController
         flash_options = BadgeService.new(@test_passage).call
       end
 
-      send_result_to_email
       flash_options ||= {}
       redirect_to result_test_passage_path(@test_passage, badges: @rules_array), flash_options
     else
