@@ -15,7 +15,7 @@ class TestPassagesController < ApplicationController
     if @test_passage.completed? || check_timer
       if @test_passage.success?
         @test_passage.update(completed: true)
-        BadgeService.new(@test_passage).call
+        # BadgeService.new(@test_passage).call
         # flash_options = BadgeService.new(@test_passage).call
       end
 
