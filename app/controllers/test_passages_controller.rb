@@ -9,20 +9,20 @@ class TestPassagesController < ApplicationController
 
   def result; end
 
-  def update
-    
+  def update 
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed? || check_timer
       if @test_passage.success?
         @test_passage.update(completed: true)
-        flash_options = BadgeService.new(@test_passage).call
+        BadgeService.new(@test_passage).call
+        # flash_options = BadgeService.new(@test_passage).call
       end
 
-      flash_options ||= {}
-      redirect_to result_test_passage_path(@test_passage, badges: @rules_array), flash_options
-
+      # flash_options ||= {}
+      # redirect_to result_test_passage_path(@test_passage, badges: @rules_array), flash_options
       TestsMailer.completed_test(@test_passage).deliver_now
+      redirect_to result_test_passage_path(@test_passage, badges: @rules_array)
     else
       render :show
     end
