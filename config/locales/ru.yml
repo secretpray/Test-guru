@@ -44,7 +44,7 @@ ru:
       gist: "Список Gist"
       feedback: "Пожелания"
       create_test: "Создать Test"
-      badges_list: "Список Badge"
+      badges_list: "Список наград"
       my_badges: "Мои награды"
       start_test: "Старт Test"
       welcome_admin: "Приветствую в Admin Panel"
@@ -126,6 +126,10 @@ ru:
       level: "Уровень"
       next: "Далее"
       gist_question: "Создать Gist"
+    diagram_js:
+      timer: "ТАЙМЕР:"
+    diagram_css:
+      progress: "ПРОГРЕСС"
   services:
     gist_question_service:
       gist_decsription: "Вопрос по тесту: %{test}"

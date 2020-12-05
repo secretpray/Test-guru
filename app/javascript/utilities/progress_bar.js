@@ -46,7 +46,7 @@ document.addEventListener('turbolinks:load', function() {
       minute = parseInt(timeLeft / 60)
       second = timeLeft % 60
       formatSecond = second < 10 ? `0${second}` : second
-      resultTime = `${minute}:${formatSecond}`
+      resultTime = `${minute}.${formatSecond}`
       let percentage = Math.round((timeLeft / initialTimer) * 100)
       texts.forEach(node => (node.textContent = percentage));
       timer.innerHTML = resultTime
