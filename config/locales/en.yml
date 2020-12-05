@@ -122,6 +122,10 @@ en:
       level: "Level"
       next: "Next"
       gist_question: "Create Gist"
+    diagram_js:
+      timer: "TIMER:"
+    diagram_css:
+      progress: "PROGRESS"
   services:
     gist_question_service:
       gist_decsription: "Question from test: %{test}"

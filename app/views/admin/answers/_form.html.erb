@@ -11,7 +11,7 @@
       <%= form.label :correct, id: :answer_correct, class: 'form-check-label' %>
     </div>
 
-    <div class="btn-group btn-center-area" role="group">
+    <div class="btn-group btn-center-area" role="group" id="create-answer">
       <button type="reset" class="btn btn-light ml-2 mr-2" id="back-tests" >
         <%= link_to t('.back'), admin_question_path(@answer.question) %>
       </button>
