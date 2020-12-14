@@ -1,20 +1,21 @@
 class TestPassagesController < ApplicationController
 
   before_action :set_test_passage, only: %i[show result update gist]
-  # before_action :set_users_badge, only: :update
 
   def show
     redirect_to tests_path, alert: t('.empty_tests') unless @test_passage.test.questions.any?
   end
 
-  def result; end
+  def result
+    send_result_to_email
+  end
 
   def update 
     @test_passage.accept!(params[:answer_ids]) if params[:answer_ids]
 
     if @test_passage.completed? || check_timer
       if @test_passage.success?
-        send_result_to_email
+        # send_result_to_email
 
         flash_options = BadgeService.new(@test_passage).call
       end
@@ -58,10 +59,6 @@ class TestPassagesController < ApplicationController
       TestsMailer.completed_test(@test_passage).deliver_now
     end
  end
-
-  # def set_users_badge
-  #    @users_badge = UsersBadge.new
-  # end
 
   def check_timer
     @test_passage.test.present? && @test_passage.time_over?

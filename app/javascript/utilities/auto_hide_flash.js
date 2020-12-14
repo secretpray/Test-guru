@@ -77,5 +77,12 @@ document.addEventListener('turbolinks:load', function() {
         sc.style.transform = `rotateZ(${ss}deg)`;
     })
   }
-});
 
+  // Print test result
+  const printButton = document.getElementById('print');
+  if (printButton) {
+    event.preventDefault()
+
+    printButton.addEventListener("click", function() { window.print() });
+  }
+});
